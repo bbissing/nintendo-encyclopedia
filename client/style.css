@@ -1,0 +1,15 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: red;
+}
+
+h1 {
+  color: white;
+  font-size: 2rem;
+}
