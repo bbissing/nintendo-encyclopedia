@@ -12,5 +12,5 @@ app.listen(PORT, (err) => {
     console.log(err);
   }
   console.log(`Listening on http://localhost:${PORT}`);
-  console.log('path: ', path.join(__dirname, '../client/dist'));
+  // console.log('path: ', path.join(__dirname, '../client/dist'));
 });
