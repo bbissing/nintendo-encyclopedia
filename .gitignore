@@ -3,3 +3,4 @@ node_modules
 client/dist/main.js
 coverage/
 client/compiled
+.DS_Store
