@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import logo from '../assets/nintendo-logo.png';
 
 function App() {
   return (
     <>
-      <h1>Learn All About Your Favorite Nintendo Characters</h1>
+      {/* <h1>Learn All About Your Favorite Nintendo Characters</h1> */}
+      <img className="nintendo_logo" src={logo} alt="nintendo logo"/>
       <div className="first_row">
         <div className="first_card">
           <h4>Search Character</h4>
