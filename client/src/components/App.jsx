@@ -1,32 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../assets/nintendo-logo.png';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './Homepage.jsx';
+import SearchCharacter from './SearchCharacter.jsx';
+import SearchGames from './SearchGames.jsx';
+import WriteReview from './WriteReview.jsx';
+import MyReviews from './MyReviews.jsx';
 
 function App() {
   return (
-    <>
-      {/* <h1>Learn All About Your Favorite Nintendo Characters</h1> */}
-      <img className="nintendo_logo" src={logo} alt="nintendo logo"/>
-      <div className="first_row">
-        <div className="first_card">
-          <h4>Search Character</h4>
-          {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.</p> */}
-        </div>
-        <div className="second_card">
-          <h4>Search Games</h4>
-          {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.</p> */}
-        </div>
-      </div>
-      <div className="second_row">
-        <div className="third_card">
-          <h4>Write Review</h4>
-          {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.</p> */}
-        </div>
-        <div className="fourth_card">
-          <h4>My Reviews</h4>
-          {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.</p> */}
-        </div>
-      </div>
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />}/>
+      <Route path="/search_character" element={<SearchCharacter />}/>
+      <Route path="/search_games" element={<SearchGames />}/>
+      <Route path="/write_review" element={<WriteReview />}/>
+      <Route path="/my_reviews" element={<MyReviews />}/>
+    </Routes>
   )
 }
 
