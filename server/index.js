@@ -11,6 +11,10 @@ app.use(express.urlencoded({extended: true}));
 
 // ---- Catch all for routing ---- //
 
+app.get('/test', function(req, res) {
+  res.send('this is the third test');
+});
+
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'), function(err) {
     if (err) {
@@ -19,9 +23,9 @@ app.get('*', function(req, res) {
   })
 });
 
-app.listen(PORT, (err) => {
-  if (err) {
-    console.log(err);
+app.listen(PORT, (error) => {
+  if (error) {
+    console.log(error);
   }
   console.log(`Listening on http://localhost:${PORT}`);
   // console.log('path: ', path.join(__dirname, '../client/dist'));
