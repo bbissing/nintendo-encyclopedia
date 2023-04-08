@@ -53,6 +53,7 @@ img.nintendo_logo {
   left: 22%;
   transition: 0.6s ease-in;
   cursor: pointer;
+  color: black;
 }
 
 .first_card h4 {
@@ -84,7 +85,7 @@ img.nintendo_logo {
 }
 
 .first_card:hover {
-  color: #ffffff;
+  color: white;
 }
 
 .first_card p {
@@ -105,6 +106,7 @@ img.nintendo_logo {
   right: -120%;
   transition: 0.6s ease-in;
   cursor: pointer;
+  color: black;
 }
 
 .second_card h4 {
@@ -157,6 +159,7 @@ img.nintendo_logo {
   left: 22%;
   transition: 0.6s ease-in;
   cursor: pointer;
+  color: black;
 }
 
 .third_card h4 {
@@ -209,6 +212,7 @@ img.nintendo_logo {
   right: -120%;
   transition: 0.6s ease-in;
   cursor: pointer;
+  color: black;
 }
 
 .fourth_card h4 {
