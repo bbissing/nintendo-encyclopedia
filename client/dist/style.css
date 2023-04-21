@@ -252,6 +252,21 @@ img.nintendo_logo {
 
 /* ----- SEARCH CHARACTER ----- */
 
+/* .wrap {
+  position: relative;
+  top: 10%;
+  left: 50%;
+  width: 100%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+} */
+
+.back-button {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+
 .search {
   width: 100%;
   position: relative;
@@ -296,10 +311,71 @@ img.nintendo_logo {
   top: 10%;
 }
 
-.wrap {
+.search-wrap {
   width: 30%;
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.card {
+  position: relative;
+  top: 15%;
+  height: 170px;
+  margin: 2em 0;
+  background-color: rgb(50, 50, 50);
+  padding: 0px;
+  box-shadow: 0px 2px 4px var(--border);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* .card-image {
+  max-height: 150px;
+  position: relative;
+  top: 5px;
+  left: 25px;
+  overflow: hidden;
+} */
+
+.card-image {
+  max-height: 150px;
+  position: relative;
+  top: 5px;
+  left: 25px;
+  /* overflow: hidden; */
+}
+
+/* .card-content {
+  padding: 50px 25px;
+} */
+
+.card-content {
+  padding: 25px 25px;
+  top: -75%;
+  left: 5%;
+  position: relative;
+  margin: 0px 25px;
+}
+
+/* article {
+  display: flex;
+} */
+
+article {
+  /* display: flex; */
+  width: 1955px;
+  height: 165px;
+}
+
+h2.card-name {
+  color: white;
+  margin: 0px 15px 0px 15px;
+  padding: 0px 15px;
+}
+
+ul.card-list {
+  color: white;
+  margin: 10px 15px;
+  padding: 0px 15px;
 }
