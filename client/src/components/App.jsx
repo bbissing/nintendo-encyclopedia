@@ -10,10 +10,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />}/>
-      <Route path="/search_character" element={<SearchCharacter />}/>
-      <Route path="/search_games" element={<SearchGames />}/>
-      <Route path="/write_review" element={<WriteReview />}/>
-      <Route path="/my_reviews" element={<MyReviews />}/>
+      <Route path="/search-character" element={<SearchCharacter />}/>
+      <Route path="/search-games" element={<SearchGames />}/>
+      <Route path="/write-review" element={<WriteReview />}/>
+      <Route path="/my-reviews" element={<MyReviews />}/>
     </Routes>
   )
 }
