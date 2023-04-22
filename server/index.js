@@ -11,10 +11,35 @@ app.use(express.urlencoded({extended: true}));
 
 
 app.get('/get-character', async (req, res) => {
-  // const response = await axios.get(`https://www.giantbomb.com/api/accessories/?api_key=${process.env.GIANT_BOMB_API_KEY}&format=json&field_list=genres,name`);
-  // console.log('req:', req.query.query);
   const response = await axios.get(`https://www.giantbomb.com/api/character/${req.query.query}/?api_key=${process.env.GIANT_BOMB_API_KEY}&format=json&field_list=name,image,deck`);
   res.send(response.data.results);
+});
+
+app.get('/get-games', async (req, res) => {
+  const allGames = [];
+  let games = await axios.get(`https://www.giantbomb.com/api/character/${req.query.query}/?api_key=${process.env.GIANT_BOMB_API_KEY}&format=json&field_list=games`);
+  games = games.data.results.games;
+  // allGames.push(games);
+  await Promise.all(games.map(async (game, index) => {
+    if (index <= 24) {
+      let response = await axios.get(`${game.api_detail_url}?api_key=${process.env.GIANT_BOMB_API_KEY}&format=json&field_list=name,image,deck`);
+      allGames.push(response.data.results);
+      // console.log('allGames:', allGames);
+    }
+    // let response = await axios.get(`${game.api_detail_url}?api_key=${process.env.GIANT_BOMB_API_KEY}&format=json&field_list=name,image,deck`);
+    // allGames.push(response.data.results);
+  }))
+
+  res.send(allGames);
+  // games.forEach(async (game, index) => {
+  //   if (index < 3) {
+  //     let response = await axios.get(`${game.api_detail_url}?api_key=${process.env.GIANT_BOMB_API_KEY}&format=json&field_list=name,image,deck`);
+  //     allGames.push(response.data.results);
+  //     console.log('allGames:', allGames);
+  //   } else if (index === 3) {
+  //     res.send(allGames);
+  //   }
+  // })
 });
 
 // ---- Catch all for routing ---- //
