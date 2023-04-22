@@ -23,7 +23,7 @@ img.nintendo_logo {
   height: 250px;
   position: absolute;
   left: 44.8%;
-  top: -7%;
+  top: -5%;
 }
 
 .first_row {
@@ -378,4 +378,11 @@ ul.card-list {
   color: white;
   margin: 10px 15px;
   padding: 0px 15px;
+}
+
+/* ----- SEARCH CHARACTER ----- */
+
+.card-image img {
+  width: 114px;
+  height: 160px;
 }
