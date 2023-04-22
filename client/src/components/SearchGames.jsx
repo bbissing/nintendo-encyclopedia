@@ -9,7 +9,7 @@ import axios from 'axios';
 function SearchGames() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [item, setItem] = useState("");
+  const [items, setItems] = useState("");
   const [q, setQ] = useState("");
 
   useEffect(() => {
@@ -24,11 +24,11 @@ function SearchGames() {
                   query: data[q.toLowerCase()]
                 }
               });
-              console.log(response.data);
-              setItem(response.data);
+              console.log('response:', response);
+              setItems(response.data);
               setIsLoaded(false);
             } else {
-              setItem("");
+              setItems("");
               setIsLoaded(false);
               alert("Sorry, we're not able to find any games for this character :(");
             }
@@ -51,7 +51,7 @@ function SearchGames() {
   }
 
   console.log('q: ', q);
-  console.log('item: ', item);
+  console.log('item: ', items);
 
   return (
     <>
@@ -82,26 +82,28 @@ function SearchGames() {
         </div>
       </div>
       <>
-        {/* {typeof item === "object" ? (
-          <div className="card">
-          <article>
-              <div className="card-image">
-                <img
-                  src={item.image.thumb_url}
-                  alt={item.name}
-                />
-              </div>
-              <div className="card-content">
-                  <h2 className="card-name">{item.name}</h2>
-                  <ul className="card-list">
-                    <span>{item.deck}</span>
-                  </ul>
-              </div>
-          </article>
-          </div>
+        {typeof items === "object" ? (
+          items.map(item => (
+            <div className="card">
+              <article>
+                <div className="card-image">
+                  <img
+                    src={item.image.thumb_url}
+                    alt={item.name}
+                  />
+                </div>
+                <div className="card-content">
+                    <h2 className="card-name">{item.name}</h2>
+                    <ul className="card-list">
+                      <span>{item.deck}</span>
+                    </ul>
+                </div>
+              </article>
+            </div>
+          ))
         ) : (
           <></>
-        )} */}
+        )}
       </>
     </>
   )
