@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const PORT = 3000;
+const db = require('../database/db');
 
 
 app.use(express.static(path.join(__dirname, '../client/dist')));

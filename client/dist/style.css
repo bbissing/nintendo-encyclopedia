@@ -421,7 +421,7 @@ ul.card-list {
 	margin-bottom: 5px;
 } */
 
-input {
+.Modal input {
   outline: none;
   border: 0;
   color: var(--cosmiclatte);
@@ -435,7 +435,7 @@ input {
   /* margin: 10px; */
 }
 
-button {
+.Modal button {
   position: relative;
   top: 15px;
   align-items: center;
@@ -455,12 +455,12 @@ button {
   width: 100%;
 }
 
-button:hover {
+.Modal button:hover {
   transform: scale(1.02);
   cursor: pointer;
 }
 
-button:active {
+.Modal button:active {
   transform: scale(1.01);
   cursor: pointer;
 }
