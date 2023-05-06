@@ -1,13 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { IoArrowBackOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function WriteReview() {
   const [modalOpen, setModal] = useState(true);
 
   function handleSubmit(e) {
 		e.preventDefault();
-    setModal(false);
+    console.log('name: ', e.target.name.value);
+    console.log('review: ', e.target.review.value);
+    (async () => {
+      try {
+        const response = await axios.post('/post-review', {
+          name: e.target.name.value,
+          review: e.target.review.value
+        });
+        console.log('response: ', response);
+        e.target.reset();
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+    // setModal(false);
 	}
 
   return (
@@ -21,11 +36,25 @@ function WriteReview() {
             <form onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name"></label>
-                <input id="name" autoComplete="false" required type="text" placeholder="Mario"/>
+                <input
+                  id="name"
+                  name="name"
+                  autoComplete="false"
+                  required
+                  type="text"
+                  placeholder="Mario"
+                />
               </div>
               <div>
                 <label htmlFor="review"></label>
-                <input id="review" autoComplete="false" required type="text" placeholder="Write Your Review" maxLength="300"/>
+                <input
+                  id="review"
+                  name="review"
+                  autoComplete="false"
+                  required
+                  type="text"
+                  placeholder="Write Your Review"
+                  maxLength="300"/>
               </div>
               <div>
                 <button>Submit</button>
