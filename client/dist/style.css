@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+
+:root {
+  --font: 'Lato', sans-serif;
+  --onyx: #3E363F;
+  --cinnabar: #DD403A;
+  --cosmiclatte: #FFFCE8;
+}
 
 html, body {
   height: 100%;
@@ -380,9 +388,79 @@ ul.card-list {
   padding: 0px 15px;
 }
 
-/* ----- SEARCH CHARACTER ----- */
+/* ----- SEARCH GAMES ----- */
 
 .card-image img {
   width: 114px;
   height: 160px;
+}
+
+/* ----- WRITE REVIEW ----- */
+
+.ModalForm {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 40%;
+  left: 0%;
+}
+
+.Modal {
+  background: var(--onyx);
+  border-radius: 2px;
+  padding: 25px 30px;
+  width: 2000px;
+  height: 130px;
+}
+
+/* .Input {
+	display: flex;
+	border-bottom: 1px solid var(--cosmiclatte);
+	padding-bottom: 3px;
+	margin-bottom: 5px;
+} */
+
+.Modal input {
+  outline: none;
+  border: 0;
+  color: var(--cosmiclatte);
+  background: transparent;
+  font-family: var(--font);
+  /* flex: 1 0 auto; */
+  font-size: 16px;
+  font-weight: 300;
+  width: 2000px;
+  padding: 10px 0px;
+  /* margin: 10px; */
+}
+
+.Modal button {
+  position: relative;
+  top: 15px;
+  align-items: center;
+  background: green;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  display: flex;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 500;
+  justify-content: center;
+  /* margin-top: 20px; */
+  outline: none;
+  padding: 10px 11px 10px 11px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.Modal button:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.Modal button:active {
+  transform: scale(1.01);
+  cursor: pointer;
 }

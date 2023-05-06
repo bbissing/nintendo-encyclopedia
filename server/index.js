@@ -4,10 +4,12 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const PORT = 3000;
-
+const db = require('../database/db');
+const { postReviewHandler } = require('../database/controllers/insertData.js');
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 
 app.get('/get-character', async (req, res) => {
@@ -40,6 +42,14 @@ app.get('/get-games', async (req, res) => {
   //     res.send(allGames);
   //   }
   // })
+});
+
+app.post('/post-review', async (req, res) => {
+  let name = req.body.name;
+  let review = req.body.review;
+  // console.log('request', req);
+  let response = await postReviewHandler(name, review);
+  res.send(response);
 });
 
 // ---- Catch all for routing ---- //

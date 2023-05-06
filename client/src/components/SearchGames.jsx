@@ -41,7 +41,7 @@ function SearchGames() {
   }, [isLoaded, q]);
 
   function handleClick() {
-    setIsLoaded(true)
+    setIsLoaded(true);
   }
 
   function handleKeyDown(event) {
