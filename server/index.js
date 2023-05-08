@@ -6,6 +6,7 @@ const axios = require('axios');
 const PORT = 3000;
 const db = require('../database/db');
 const { postReviewHandler } = require('../database/controllers/insertData.js');
+const { getReviewHandler } = require('../database/controllers/retrieveData.js');
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(express.urlencoded({extended: true}));
@@ -47,8 +48,16 @@ app.get('/get-games', async (req, res) => {
 app.post('/post-review', async (req, res) => {
   let name = req.body.name;
   let review = req.body.review;
+  let image = req.body.image;
   // console.log('request', req);
-  let response = await postReviewHandler(name, review);
+  // let image = await axios.get(`https://www.giantbomb.com/api/character/${req.query.query}/?api_key=${process.env.GIANT_BOMB_API_KEY}&format=json&field_list=name,image,deck`);
+  let response = await postReviewHandler(name, review, image);
+  res.status(201).end();
+});
+
+app.get('/get-reviews', async (req, res) => {
+  let results = [];
+  let response = await getReviewHandler();
   res.send(response);
 });
 

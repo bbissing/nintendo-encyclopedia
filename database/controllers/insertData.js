@@ -1,14 +1,14 @@
 const { pool } = require("../db");
 
 module.exports = {
-  postReviewHandler: async (name, review) => {
+  postReviewHandler: async (name, review, image) => {
     try {
       const result = await pool.query(
-        "INSERT INTO my_reviews (character_name, review) VALUES ($1, $2)",
-        [name, review]
+        "INSERT INTO my_reviews (character_name, review, thumbnail_url) VALUES ($1, $2, $3)",
+        [name, review, image]
       );
       console.log(`Added a character with the name ${name}`);
-      return result;
+      // return result;
     } catch (error) {
       console.error(error)
     }
