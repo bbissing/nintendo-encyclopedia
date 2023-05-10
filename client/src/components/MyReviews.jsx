@@ -30,15 +30,13 @@ function MyReviews() {
           <IoArrowBackOutline className="back-button" color={'#262929'} size={30} />
         </Link>
       </>
-      <div>
-        <h4>My Reviews</h4>
-      </div>
-      <>
+      <div className="reviews">
         {typeof items === "object" ? (
           items.map(item => (
+            // <div className={`box ${isBoxVisible ? "" : " hidden"}`}>
             <div className="card" key={item.id}>
               <article>
-                <div className="card-image">
+                <div className={`${item.thumbnail_url.includes('localhost') ? 'card-image-default' : 'card-image'}`}>
                   <img
                     src={item.thumbnail_url}
                     alt={item.character_name}
@@ -56,7 +54,7 @@ function MyReviews() {
         ) : (
           <></>
         )}
-      </>
+      </div>
     </>
   )
 }
