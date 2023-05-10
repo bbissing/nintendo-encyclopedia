@@ -35,6 +35,7 @@ const text = `
     "id" SERIAL PRIMARY KEY,
     "character_name" TEXT NOT NULL,
     "review" TEXT NOT NULL,
+    "thumbnail_url" TEXT NOT NULL,
     "user_id" INT
   );`;
 

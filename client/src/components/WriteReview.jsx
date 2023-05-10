@@ -1,20 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { IoArrowBackOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import data from '../assets/identifiers.json';
 import axios from 'axios';
+import defaultPic from '../assets/default_profile_pic.png';
 
 function WriteReview() {
   const [modalOpen, setModal] = useState(true);
 
   function handleSubmit(e) {
 		e.preventDefault();
+    let name = e.target.name.value;
+    let review = e.target.review.value;
     console.log('name: ', e.target.name.value);
     console.log('review: ', e.target.review.value);
     (async () => {
       try {
+        let image = defaultPic;
+        if (data[name.toLowerCase()] !== undefined) {
+          const temp = await axios.get('/get-character', {
+            params: {
+              query: data[name.toLowerCase()]
+            }
+          })
+          image = temp.data.image.thumb_url;
+          // console.log('image: ', image);
+        };
         const response = await axios.post('/post-review', {
           name: e.target.name.value,
-          review: e.target.review.value
+          review: e.target.review.value,
+          image: image
         });
         console.log('response: ', response);
         e.target.reset();

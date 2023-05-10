@@ -464,3 +464,25 @@ ul.card-list {
   transform: scale(1.01);
   cursor: pointer;
 }
+
+/* ----- MY REVIEWS ----- */
+
+.reviews {
+  position: relative;
+  top: 5%;
+  margin: 10px;
+  padding-bottom: 10px;
+  bottom: 10%;
+}
+
+.card-image-default img {
+  width: 120px;
+  height: 130px;
+}
+
+.card-image-default {
+  max-height: 125px;
+  position: relative;
+  top: 18px;
+  left: 25px;
+}
