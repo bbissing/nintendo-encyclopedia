@@ -8,7 +8,18 @@ module.exports = {
         [name, review, image]
       );
       console.log(`Added a character with the name ${name}`);
-      // return result;
+    } catch (error) {
+      console.error(error)
+    }
+  },
+
+  createUser: async (username, email, password) => {
+    try {
+      const result = await pool.query(
+        "INSERT INTO users (username, email, password) VALUES ($1, $2, crypt($3, gen_salt('bf')))",
+        [username, email, password]
+      );
+      console.log(`Added a character with the username ${username}`);
     } catch (error) {
       console.error(error)
     }

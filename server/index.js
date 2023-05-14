@@ -5,7 +5,7 @@ const app = express();
 const axios = require('axios');
 const PORT = 3000;
 const db = require('../database/db');
-const { postReviewHandler } = require('../database/controllers/insertData.js');
+const { postReviewHandler, createUser } = require('../database/controllers/insertData.js');
 const { getReviewHandler } = require('../database/controllers/retrieveData.js');
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
@@ -52,6 +52,14 @@ app.post('/post-review', async (req, res) => {
   // console.log('request', req);
   // let image = await axios.get(`https://www.giantbomb.com/api/character/${req.query.query}/?api_key=${process.env.GIANT_BOMB_API_KEY}&format=json&field_list=name,image,deck`);
   let response = await postReviewHandler(name, review, image);
+  res.status(201).end();
+});
+
+app.post('/create-user', async (req, res) => {
+  let username = req.body.username;
+  let email = req.body.email;
+  let password = req.body.password;
+  let response = await createUser(username, email, password);
   res.status(201).end();
 });
 
