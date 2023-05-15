@@ -1,19 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IoArrowBackOutline } from 'react-icons/io5';
+import HomePage from './Homepage.jsx';
 import logo from '../assets/nintendo-logo.png';
 import axios from 'axios';
 
-function Register() {
+function Register(props) {
+  const [formSubmitted, submitForm] = useState(false);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const response = await axios.get('/get-reviews');
+  //       console.log('response: ', response.data.rows);
+  //       setItems(response.data.rows);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   })();
+  // }, [formSubmitted]);
 
   function handleSubmit(e) {
 		e.preventDefault();
     let username = e.target.username.value;
     let email = e.target.email.value;
     let password = e.target.password.value;
-    console.log('username: ', e.target.username.value);
-    console.log('email: ', e.target.email.value);
-    console.log('password: ', e.target.password.value);
+    // console.log('username: ', e.target.username.value);
+    // console.log('email: ', e.target.email.value);
+    // console.log('password: ', e.target.password.value);
     (async () => {
       try {
         const response = await axios.post('/create-user', {
@@ -22,9 +36,11 @@ function Register() {
           password
         });
         console.log('response: ', response);
-        e.target.reset();
+        props.authenticate(true);
+        // e.target.reset();
       } catch (error) {
         console.error(error);
+        props.authenticate(false);
       }
     })();
   }
@@ -47,7 +63,7 @@ function Register() {
                 autoComplete="false"
                 required
                 type="text"
-                placeholder=""
+                placeholder="Username"
                 maxLength="25"
               />
               <label htmlFor="email">EMAIL</label>

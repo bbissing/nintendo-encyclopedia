@@ -522,7 +522,7 @@ ul.card-list {
 
 .loginModal h3 {
   position: relative;
-  top: -15px;
+  top: -10px;
   color: white;
 }
 
@@ -603,4 +603,10 @@ ul.card-list {
 .loginModal .signUp-btn:hover {
   transform: scale(1.02);
   cursor: pointer;
+}
+
+.loginModal .back-button {
+  position: absolute;
+  top: 2%;
+  left: 0.5%;
 }

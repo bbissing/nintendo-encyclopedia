@@ -13,17 +13,37 @@ module.exports = {
     }
   },
 
-  createUser: async (username, email, password) => {
+  createUser: async (req, res) => {
+    let username = req.body.username;
+    let email = req.body.email;
+    let password = req.body.password;
+
     try {
       const result = await pool.query(
         "INSERT INTO users (username, email, password) VALUES ($1, $2, crypt($3, gen_salt('bf')))",
         [username, email, password]
       );
       console.log(`Added a character with the username ${username}`);
+      res.status(201).end();
     } catch (error) {
-      console.error(error)
+      console.error(error);
+      res.status(400).send({
+        message:'Username already exists/email has been taken'
+      });
     }
   }
+
+  // createUser: async (username, email, password) => {
+  //   try {
+  //     const result = await pool.query(
+  //       "INSERT INTO users (username, email, password) VALUES ($1, $2, crypt($3, gen_salt('bf')))",
+  //       [username, email, password]
+  //     );
+  //     console.log(`Added a character with the username ${username}`);
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
 }
 
 // async function insertData() {

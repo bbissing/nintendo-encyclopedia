@@ -6,7 +6,7 @@ const axios = require('axios');
 const PORT = 3000;
 const db = require('../database/db');
 const { postReviewHandler, createUser } = require('../database/controllers/insertData.js');
-const { getReviewHandler } = require('../database/controllers/retrieveData.js');
+const { getReviewHandler, retrieveUser } = require('../database/controllers/retrieveData.js');
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(express.urlencoded({extended: true}));
@@ -55,19 +55,30 @@ app.post('/post-review', async (req, res) => {
   res.status(201).end();
 });
 
-app.post('/create-user', async (req, res) => {
-  let username = req.body.username;
-  let email = req.body.email;
-  let password = req.body.password;
-  let response = await createUser(username, email, password);
-  res.status(201).end();
-});
+app.post('/create-user', createUser);
+
+// app.post('/create-user', async (req, res) => {
+//   let username = req.body.username;
+//   let email = req.body.email;
+//   let password = req.body.password;
+//   let response = await createUser(username, email, password);
+//   res.status(201).end();
+// });
 
 app.get('/get-reviews', async (req, res) => {
   let results = [];
   let response = await getReviewHandler();
   res.send(response);
 });
+
+app.post('/retrieve-user', retrieveUser);
+
+// app.post('/retrieve-user', async (req, res) => {
+//   let email = req.body.email;
+//   let password = req.body.password;
+//   let response = await retrieveUser(email, password);
+//   res.status(201).send(response);
+// });
 
 // ---- Catch all for routing ---- //
 
