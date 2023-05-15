@@ -56,7 +56,7 @@ function SearchGames() {
   return (
     <>
       <>
-        <Link to="/">
+        <Link to="/home">
           <IoArrowBackOutline className="back-button" color={'#262929'} size={30} />
         </Link>
       </>

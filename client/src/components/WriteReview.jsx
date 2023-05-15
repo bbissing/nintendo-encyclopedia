@@ -42,7 +42,7 @@ function WriteReview() {
 
   return (
     <>
-      <Link to="/">
+      <Link to="/home">
         <IoArrowBackOutline className="back-button" color={'#262929'} size={30} />
       </Link>
       {modalOpen ? (
@@ -69,7 +69,8 @@ function WriteReview() {
                   required
                   type="text"
                   placeholder="Write Your Review"
-                  maxLength="300"/>
+                  maxLength="300"
+                />
               </div>
               <div>
                 <button>Submit</button>
