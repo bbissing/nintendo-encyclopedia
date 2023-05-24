@@ -36,7 +36,13 @@ const text = `
     "character_name" TEXT NOT NULL,
     "review" TEXT NOT NULL,
     "thumbnail_url" TEXT NOT NULL,
-    "user_id" INT
+    "user_id" INT NOT NULL,
+    "char_id" TEXT NOT NULL,
+    CONSTRAINT game_character_unique UNIQUE (user_id, char_id),
+    CONSTRAINT fk_user
+      FOREIGN KEY(user_id)
+        REFERENCES users(id)
+        ON DELETE CASCADE
   );`;
 
 execute(text).then(result => {

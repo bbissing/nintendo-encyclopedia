@@ -1,27 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import { IoArrowBackOutline } from 'react-icons/io5';
+import { IconContext } from "react-icons";
+import { IoArrowBackOutline, IoTrashOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import data from '../assets/identifiers.json';
 
-function MyReviews() {
+function MyReviews(props) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState("");
+  const [itemRemoved, removeItems] = useState(false);
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios.get('/get-reviews');
-        console.log('response: ', response.data.rows);
-        setItems(response.data.rows);
+        let userId = 7;
+        if (itemRemoved) {
+          console.log('this is a test');
+          const response = await axios.post('/delete-review', {
+            id: itemRemoved
+          });
+          const newItems = items.filter(item => item.id !== itemRemoved);
+          console.log('newItems: ', newItems);
+          setItems(newItems);
+          removeItems(false);
+        } else {
+          const response = await axios.get('/get-reviews', {
+            params: {
+              userId: userId
+            }
+          });
+          console.log('response: ', response.data.rows);
+          setItems(response.data.rows);
+        }
       } catch (error) {
-        console.error(error);
+        console.error(error.response.data.message);
       }
     })();
-  }, []);
+  }, [itemRemoved]);
 
   console.log('items: ', items);
+
+  function handleClick(id) {
+    // event.preventDefault();
+    // console.log('event: ', event);
+    console.log('id: ', id);
+    removeItems(id);
+  }
 
   return (
     <>
@@ -47,6 +72,12 @@ function MyReviews() {
                   <ul className="card-list">
                     <span>{item.review}</span>
                   </ul>
+                  <button type="submit" className="deleteButton" onClick={() => {handleClick(item.id)}}>
+                  {/* <button type="submit" className="deleteButton"> */}
+                    <IconContext.Provider value={{ className: "trash-bin" }}>
+                        <IoTrashOutline />
+                    </IconContext.Provider>
+                  </button>
                 </div>
               </article>
             </div>

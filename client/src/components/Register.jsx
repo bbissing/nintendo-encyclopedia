@@ -50,7 +50,7 @@ function Register(props) {
       <img className="nintendo_logo" src={logo} alt="nintendo logo"/>
       <div className="loginForm">
         <div className="loginModal" style={{height: '400px'}}>
-          <Link to='/'>
+          <Link to='/login'>
             <IoArrowBackOutline className="back-button" color={'#ffffff'} size={20} />
           </Link>
           <h3>SIGN UP</h3>

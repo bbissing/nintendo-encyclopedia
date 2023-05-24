@@ -20,7 +20,7 @@ function Login(props) {
           password
         });
         console.log('response: ', response);
-        props.authenticate(true);
+        props.authenticate(response);
         // e.target.reset();
       } catch (error) {
         console.log(error);
