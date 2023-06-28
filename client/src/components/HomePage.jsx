@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/nintendo-logo.png';
+import yoshi from '../assets/yoshi.png';
+import mario from '../assets/mario.png';
+import fox from '../assets/fox.png';
+import rosalina from '../assets/rosalina.png';
 import { IconContext } from "react-icons";
 import { CiLogout } from 'react-icons/ci';
 import axios from 'axios';
@@ -31,6 +35,9 @@ function HomePage(props) {
           <Link to="/search-character">
             <div className="first_card">
               <h4>Search Character</h4>
+              <div className="yoshi">
+                <img src={yoshi} alt="yoshi"/>
+              </div>
             </div>
           </Link>
         </div>
@@ -38,6 +45,9 @@ function HomePage(props) {
           <Link to="/search-games">
             <div className="second_card">
               <h4>Search Games</h4>
+              <div className="mario">
+                <img src={mario} alt="mario"/>
+              </div>
             </div>
           </Link>
         </div>
@@ -47,6 +57,9 @@ function HomePage(props) {
           <Link to="/write-review">
             <div className="third_card">
               <h4>Write Review</h4>
+              <div className="fox">
+                <img src={fox} alt="fox"/>
+              </div>
             </div>
           </Link>
         </div>
@@ -54,6 +67,9 @@ function HomePage(props) {
           <Link to="/my-reviews">
             <div className="fourth_card">
               <h4>My Reviews</h4>
+              <div className="rosalina">
+                <img src={rosalina} alt="rosalina"/>
+              </div>
             </div>
           </Link>
         </div>
