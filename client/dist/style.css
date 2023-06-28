@@ -142,6 +142,15 @@ h1 {
   top: 35%;
 }
 
+.yoshi {
+  display: flex;
+  height: 185%;
+  justify-content: flex-end;
+  position: relative;
+  right: -24%;
+  top: -9%;
+}
+
 
 .first_card::before {
   content: "";
@@ -199,6 +208,15 @@ h1 {
   top: 35%;
 }
 
+.mario {
+  display: flex;
+  height: 185%;
+  justify-content: flex-end;
+  position: relative;
+  right: -24%;
+  top: -9%;
+}
+
 .second_card::before {
   content: "";
   position: absolute;
@@ -253,6 +271,15 @@ h1 {
   top: 35%;
 }
 
+.rosalina {
+  display: flex;
+  height: 238%;
+  justify-content: flex-end;
+  position: relative;
+  right: -15%;
+  top: -15%;
+}
+
 .third_card::before {
   content: "";
   position: absolute;
@@ -304,6 +331,15 @@ h1 {
   margin: auto;
   left: 25%;
   top: 35%;
+}
+
+.fox {
+  display: flex;
+  height: 233%;
+  justify-content: flex-end;
+  position: relative;
+  right: -50%;
+  top: -10%;
 }
 
 .fourth_card::before {
