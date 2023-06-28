@@ -83,7 +83,7 @@ function SearchCharacter() {
       </div>
       <>
         {typeof item === "object" ? (
-          <div className="card">
+          <div className="searchCharacterCard">
           <article>
               <div className="card-image">
                 <img

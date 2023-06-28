@@ -31,7 +31,11 @@ function Login(props) {
 
   return (
     <>
-      <img className="nintendo_logo" src={logo} alt="nintendo logo"/>
+      <div className="header">
+        <div className="nintendo_logo">
+          <img src={logo} alt="nintendo logo"/>
+        </div>
+      </div>
       <div className="loginForm">
         <div className="loginModal">
           <h3>LOGIN</h3>

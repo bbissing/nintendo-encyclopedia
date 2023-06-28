@@ -122,7 +122,7 @@ function WriteReview(props) {
         <div className="ModalForm">
           <div className="Modal">
             <form onSubmit={handleSubmit}>
-              <div>
+              <div className="inputField">
                 <label htmlFor="name"></label>
                 <input
                   id="name"
@@ -133,7 +133,7 @@ function WriteReview(props) {
                   placeholder="Mario"
                 />
               </div>
-              <div>
+              <div className="inputField">
                 <label htmlFor="review"></label>
                 <input
                   id="review"
@@ -145,7 +145,7 @@ function WriteReview(props) {
                   maxLength="300"
                 />
               </div>
-              <div>
+              <div className="submitButton">
                 <button>Submit</button>
               </div>
             </form>

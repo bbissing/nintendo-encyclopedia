@@ -84,7 +84,7 @@ function SearchGames() {
       <>
         {typeof items === "object" ? (
           items.map(item => (
-            <div className="card">
+            <div className="search_games_card">
               <article>
                 <div className="card-image">
                   <img

@@ -47,12 +47,21 @@ function Register(props) {
 
   return (
     <>
-      <img className="nintendo_logo" src={logo} alt="nintendo logo"/>
+      <div className="header">
+        <div className="register_back-button">
+          <Link to='/'>
+            <IoArrowBackOutline className="back-button" color={'#262929'} size={30} />
+          </Link>
+        </div>
+        <div className="nintendo_logo">
+          <img src={logo} alt="nintendo logo"/>
+        </div>
+      </div>
       <div className="loginForm">
         <div className="loginModal" style={{height: '400px'}}>
-          <Link to='/'>
+          {/* <Link to='/'>
             <IoArrowBackOutline className="back-button" color={'#ffffff'} size={20} />
-          </Link>
+          </Link> */}
           <h3>SIGN UP</h3>
           <form onSubmit={handleSubmit}>
             <div>

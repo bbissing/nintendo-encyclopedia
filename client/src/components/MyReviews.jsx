@@ -50,11 +50,11 @@ function MyReviews(props) {
 
   return (
     <>
-      <>
+      <div>
         <Link to="/home">
           <IoArrowBackOutline className="back-button" color={'#262929'} size={30} />
         </Link>
-      </>
+      </div>
       <div className="reviews">
         {typeof items === "object" ? (
           items.map(item => (
@@ -72,8 +72,9 @@ function MyReviews(props) {
                   <ul className="card-list">
                     <span>{item.review}</span>
                   </ul>
+                </div>
+                <div className="deleteReview">
                   <button type="submit" className="deleteButton" onClick={() => {handleClick(item.id)}}>
-                  {/* <button type="submit" className="deleteButton"> */}
                     <IconContext.Provider value={{ className: "trash-bin" }}>
                         <IoTrashOutline />
                     </IconContext.Provider>

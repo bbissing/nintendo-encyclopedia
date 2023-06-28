@@ -8,6 +8,19 @@
   --cosmiclatte: #FFFCE8;
 }
 
+/* #root {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw; */
+
+
+#root {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  align-items: center;
+}
+
 html, body {
   height: 100%;
 }
@@ -21,29 +34,86 @@ body {
   background-color: red;
 }
 
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 35%; */
+  height: 30%;
+  position: relative;
+  top: -19%;
+}
+
+.home_page_header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35%;
+  height: 30%;
+  position: relative;
+  top: -10%;
+}
+
+.home_page_header .nintendo_logo {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -15%;
+}
+
 h1 {
   color: white;
   font-size: 2rem;
 }
 
-img.nintendo_logo {
-  width: 250px;
+.nintendo_logo {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  /* position: absolute; */
+  /* top: -5%; */
+}
+
+.nintendo_logo img {
+  /* width: 15%; */
+  height: 100%;
+  display: flex;
+  /* left: 38%; */
+  /* top: 25%; */
+}
+
+.top_row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   height: 250px;
-  position: relative;
-  left: 38%;
-  top: -5%;
+  justify-content: center;
+  /* align-items: center; */
+  top: -20%;
 }
 
-.first_row {
+.bottom_row {
   position: relative;
-  left: -73%;
-  top: -5%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 250px;
+  justify-content: center;
+  /* align-items: center; */
+  top: -10%;
 }
 
-.second_row {
-  position: relative;
-  left: -73%;
-  top: 15%;
+.cards {
+  height: 0px;
+  display: flex;
 }
 
 .first_card {
@@ -57,11 +127,12 @@ img.nintendo_logo {
   position: relative;
   z-index: 0;
   overflow: hidden;
-  left: 22%;
+  left: -50%;
   transition: 0.6s ease-in;
   cursor: pointer;
   color: black;
 }
+
 
 .first_card h4 {
   font-size: x-large;
@@ -70,6 +141,7 @@ img.nintendo_logo {
   left: 25%;
   top: 35%;
 }
+
 
 .first_card::before {
   content: "";
@@ -85,6 +157,7 @@ img.nintendo_logo {
   transform-origin: 50% 50%;
   transition: transform 0.25s ease-out;
 }
+
 
 .first_card:hover::before {
   transition-delay:0.2s;
@@ -102,6 +175,7 @@ img.nintendo_logo {
 .second_card {
   border-radius: 10px;
   display: inline-block;
+  /* display: flex; */
   filter: drop-shadow(0 5px 10px 0 #ffffff);
   width: 350px;
   height: 150px;
@@ -110,7 +184,8 @@ img.nintendo_logo {
   position: relative;
   z-index: 0;
   overflow: hidden;
-  right: -120%;
+  left: 50%;
+  /* right: 50%; */
   transition: 0.6s ease-in;
   cursor: pointer;
   color: black;
@@ -163,7 +238,8 @@ img.nintendo_logo {
   position: relative;
   z-index: 0;
   overflow: hidden;
-  left: 22%;
+  left: -50%;
+  /* right: 100%; */
   transition: 0.6s ease-in;
   cursor: pointer;
   color: black;
@@ -216,7 +292,7 @@ img.nintendo_logo {
   position: relative;
   z-index: 0;
   overflow: hidden;
-  right: -120%;
+  left: 50%;
   transition: 0.6s ease-in;
   cursor: pointer;
   color: black;
@@ -259,21 +335,24 @@ img.nintendo_logo {
 }
 
 .logoutButton {
-  width: 77px;
-  height: 41px;
   border: none;
   background: transparent;
-  text-align: center;
+  /* text-align: center; */
   color: #fff;
-  position: absolute;
+  /* display: flex; */
+  /* position: absolute; */
   cursor: pointer;
-  font-size: 39px;
-  top: 2%;
-  left: 95%;
+  font-size: 36px;
 }
 
 .logout {
-  color: #ffffff;
+  width: 100%;
+  display: flex;
+  height: 100%;
+  justify-content: right;
+  align-items: center;
+  position: relative;
+  top: -15%;
 }
 
 /* ----- SEARCH CHARACTER ----- */
@@ -290,7 +369,6 @@ img.nintendo_logo {
 .back-button {
   position: absolute;
   top: 2%;
-  left: 2%;
 }
 
 .search {
@@ -345,10 +423,33 @@ img.nintendo_logo {
   transform: translate(-50%, -50%);
 }
 
-.card {
+/* keep!!! */
+.search_games_card {
   position: relative;
   top: 15%;
-  height: 170px;
+  display: grid;
+  align-items: center;
+  align-items: center;
+  width: 100%;
+  height: 180px;
+  margin: 0.5em 0;
+  background-color: rgb(50, 50, 50);
+}
+
+.search_games_card article {
+  display: flex;
+  position: relative;
+}
+
+.searchCharacterCard {
+  position: relative;
+  flex-wrap: wrap;
+  display: flex;
+  /* top: 15%; */
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  width: 100%;
   margin: 2em 0;
   background-color: rgb(50, 50, 50);
   padding: 0px;
@@ -356,30 +457,56 @@ img.nintendo_logo {
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/* keep! */
 /* .card-image {
   max-height: 150px;
   position: relative;
   top: 5px;
-  left: 25px;
-  overflow: hidden;
-} */
+  left: 25px; */
 
-.card-image {
+
+.search_games_card .card-image {
+  max-height: 150px;
+  display: flex;
+  position: relative;
+  height: 100%;
+  top: -5%;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.searchCharacterCard .card-image {
   max-height: 150px;
   position: relative;
-  top: 5px;
-  left: 25px;
+  /* top: 5px; */
+  /* left: -5%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* overflow: hidden; */
 }
 
 /* .card-content {
-  padding: 50px 25px;
-} */
-
-.card-content {
   padding: 25px 25px;
   top: -75%;
   left: 5%;
+  position: relative;
+  margin: 0px 25px; */
+
+
+.search_games_card .card-content {
+  padding: 25px 25px;
+  display: grid;
+  position: relative;
+  align-items: center;
+  margin: 0px 25px;
+}
+
+.searchCharacterCard .card-content {
+  padding: 25px 25px;
+  /* top: -75%; */
+  /* left: -10%; */
+  /* display: inline-flex; */
   position: relative;
   margin: 0px 25px;
 }
@@ -388,21 +515,30 @@ img.nintendo_logo {
   display: flex;
 } */
 
-article {
-  /* display: flex; */
+/* keep!!! */
+/* article {
   width: 1955px;
-  height: 165px;
+  height: 165px; */
+
+
+
+.searchCharacterCard article {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  /* width: 100%; */
+  /* height: 165px; */
 }
 
 h2.card-name {
   color: white;
-  margin: 0px 15px 0px 15px;
+  margin: 0px 15px;
   padding: 0px 15px;
 }
 
 ul.card-list {
   color: white;
-  margin: 10px 15px;
+  margin: 0px 15px;
   padding: 0px 15px;
 }
 
@@ -415,21 +551,43 @@ ul.card-list {
 
 /* ----- WRITE REVIEW ----- */
 
-.ModalForm {
+/* .ModalForm {
   align-items: center;
   display: flex;
   justify-content: center;
   position: relative;
   top: 40%;
-  left: 0%;
+  left: 0%; */
+
+
+.ModalForm {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
 }
 
-.Modal {
+/* .Modal {
   background: var(--onyx);
   border-radius: 2px;
   padding: 25px 30px;
   width: 2000px;
+  height: 130px; */
+
+
+.Modal {
+  background: var(--onyx);
+  border-radius: 2px;
+  padding: 45px 30px;
+  width: 85%;
   height: 130px;
+}
+
+.inputField {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
 }
 
 .errorModal {
@@ -463,19 +621,55 @@ ul.card-list {
 	margin-bottom: 5px;
 } */
 
+/* .Modal input {
+  outline: none;
+  border: 0;
+  color: var(--cosmiclatte);
+  background: transparent;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 300;
+  width: 2000px;
+  padding: 10px 0px; */
+
+
 .Modal input {
   outline: none;
   border: 0;
   color: var(--cosmiclatte);
   background: transparent;
   font-family: var(--font);
-  /* flex: 1 0 auto; */
+  display: flex;
+  position: relative;
   font-size: 16px;
   font-weight: 300;
-  width: 2000px;
+  width: 100%;
   padding: 10px 0px;
-  /* margin: 10px; */
 }
+
+.submitButton {
+  position: relative;
+  top: 15px;
+}
+
+/* .Modal button {
+  position: relative;
+  top: 15px;
+  align-items: center;
+  background: green;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  display: flex;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 500;
+  justify-content: center;
+  outline: none;
+  padding: 10px 11px 10px 11px;
+  text-transform: uppercase;
+  width: 100%; */
+
 
 .Modal button {
   position: relative;
@@ -544,33 +738,85 @@ button.deleteBtnYes {
 
 /* ----- MY REVIEWS ----- */
 
-.reviews {
+/* .reviews {
   position: relative;
-  top: 5%;
-  margin: 10px;
+  display: grid;
+  top: -5%;
+  width: 100%;
   padding-bottom: 10px;
-  bottom: 10%;
+  bottom: 10%; */
+
+/* .reviews {
+    position: relative;
+    display: grid;
+    top: -150px;
+    width: 100%; */
+
+
+
+.reviews {
+  position: absolute;
+  display: grid;
+  top: 8%;
+  width: 99.4%;
 }
 
-.card-image-default img {
-  width: 120px;
-  height: 130px;
+
+.reviews .card {
+  position: relative;
+  display: inherit;
+  align-items: center;
+  background-color: rgb(50, 50, 50);
+  height: 180px;
+  margin: 0.5em 0;
+  padding: 0px;
 }
 
-.card-image-default {
+.reviews .card-image {
+  max-height: 150px;
+  position: relative;
+  height: 100%;
+  top: -5%;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  left: 5px;
+}
+
+.reviews .card-content {
+  padding: 25px 25px;
+  display: grid;
+  position: relative;
+  align-items: center;
+  margin: 0px 25px;
+}
+
+.reviews article {
+  display: flex;
+  position: relative;
+}
+
+.reviews .card-image-default {
   max-height: 125px;
   position: relative;
   top: 18px;
   left: 25px;
 }
 
+.reviews .card-image-default img {
+  width: 120px;
+  height: 130px;
+}
+
+.deleteReview {
+  position: absolute;
+  top: 35%;
+  right: 3%;
+}
+
 .deleteButton {
-  top: -50px;
-  left: 90%;
-  position: relative;
   border: none;
   background: transparent;
-  text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
@@ -583,23 +829,225 @@ button.deleteBtnYes {
   top: 10%;
 }
 
+/* ----- MEDIA QUERIES ----- */
+
+@media (min-width: 320px) and (max-width: 480px) {
+/* for smaller devices */
+  .cards {
+    height: 0px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+  }
+
+  a {
+    width: 100%;
+    position: relative;
+  }
+
+  .first_card {
+    border-radius: 10px;
+    display: inline-block;
+    /* display: flex; */
+    filter: drop-shadow(0 5px 10px 0 #ffffff);
+    width: 100%;
+    height: 150px;
+    background-color: #ffffff;
+    padding: 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    /* right: 42%; */
+    top: -15px;
+    left: 0%;
+    transition: 0.6s ease-in;
+    cursor: pointer;
+    color: black;
+}
+
+  .first_card h4 {
+    font-size: x-large;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    left: 0%;
+    top: 35%;
+  }
+
+  .first_card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: -280px;
+    background: #000000;
+    height: 275px;
+    width: 60px;
+    border-radius: 32px;
+    transform: scale(5);
+    transform-origin: 100% 50%;
+    transition: transform 0.25s ease-out;
+  }
+
+  .second_card {
+    border-radius: 10px;
+    display: inline-block;
+    /* display: flex; */
+    filter: drop-shadow(0 5px 10px 0 #ffffff);
+    width: 100%;
+    height: 150px;
+    background-color: #ffffff;
+    padding: 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    /* right: 42%; */
+    left: 0%;
+    transition: 0.6s ease-in;
+    cursor: pointer;
+    color: black;
+    top: 20px;
+}
+
+  .second_card h4 {
+    font-size: x-large;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    left: 0%;
+    top: 35%;
+  }
+
+  .second_card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: -280px;
+    background: #000000;
+    height: 275px;
+    width: 60px;
+    border-radius: 32px;
+    transform: scale(5);
+    transform-origin: 100% 50%;
+    transition: transform 0.25s ease-out;
+  }
+
+  .third_card {
+    /* top: 15px; */
+    border-radius: 10px;
+    display: inline-block;
+    /* display: flex; */
+    filter: drop-shadow(0 5px 10px 0 #ffffff);
+    width: 100%;
+    height: 150px;
+    background-color: #ffffff;
+    padding: 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    /* right: 42%; */
+    left: 0%;
+    top: -5px;
+    transition: 0.6s ease-in;
+    cursor: pointer;
+    color: black;
+}
+
+  .third_card h4 {
+    font-size: x-large;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    left: 0%;
+    top: 35%;
+  }
+
+  .third_card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: -280px;
+    background: #000000;
+    height: 275px;
+    width: 60px;
+    border-radius: 32px;
+    transform: scale(5);
+    transform-origin: 100% 50%;
+    transition: transform 0.25s ease-out;
+  }
+
+  .fourth_card {
+    border-radius: 10px;
+    display: inline-block;
+    /* display: flex; */
+    filter: drop-shadow(0 5px 10px 0 #ffffff);
+    width: 100%;
+    height: 150px;
+    background-color: #ffffff;
+    padding: 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    /* right: 42%; */
+    left: 0%;
+    transition: 0.6s ease-in;
+    cursor: pointer;
+    color: black;
+    top: 30px;
+}
+
+  .fourth_card h4 {
+    font-size: x-large;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    left: 0%;
+    top: 35%;
+  }
+
+  .fourth_card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: -280px;
+    background: #000000;
+    height: 275px;
+    width: 60px;
+    border-radius: 32px;
+    transform: scale(5);
+    transform-origin: 100% 50%;
+    transition: transform 0.25s ease-out;
+  }
+}
+/* for smaller devices */
+
 /* ----- LOGIN ----- */
 
 .loginForm {
-  align-items: center;
   display: flex;
   justify-content: center;
+  height: 400px;
+  width: 100%;
   position: relative;
-  top: 0%;
-  left: 0%;
+  align-items: center;
+  /* top: -20%; */
+  top: -34%;
 }
 
 .loginModal {
   background: var(--onyx);
   border-radius: 2px;
-  padding: 25px 30px;
-  width: 1000px;
-  height: 315px;
+  /* padding: 15px 30px 40px 30px; */
+  padding: 15px 30px 35px;
+  /* width: 70%; */
+  width: 30%;
+  /* display: flex; */
+  /* display: inline-flex; */
+  height: 300px;
 }
 
 .loginModal input {
@@ -610,25 +1058,33 @@ button.deleteBtnYes {
   background: transparent;
   font-family: var(--font);
   font-size: 16px;
+  position: relative;
+  /* left: 10%; */
   font-weight: 300;
-  width: 980px;
+  width: 98.85%;
+  /* width: 1000px; */
+  display: flex;
   margin: 15px 0px;
-  padding: 10px 10px;
+  padding: 10px 0px 10px 10px;
 }
 
 .loginModal h3 {
   position: relative;
+  width: 100%;
+  display: flex;
   top: -10px;
   color: white;
 }
 
 .loginModal label {
   color: white;
+  display: flex;
+  position: relative;
 }
 
 .loginModal .login-btn {
   position: relative;
-  top: 15px;
+  top: 10px;
   align-items: center;
   background: green;
   border: 0;
@@ -660,12 +1116,14 @@ button.deleteBtnYes {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: -23px;
   gap: 12px;
   position: relative;
   width: 100%;
-  height: 26px;
+  height: 18px;
   border-radius: 5px;
+  margin: 10px 0px;
+  padding: 10px 0px;
+  top: 10px;
   flex: none;
   order: 1;
   align-self: stretch;
@@ -701,8 +1159,19 @@ button.deleteBtnYes {
   cursor: pointer;
 }
 
-.loginModal .back-button {
+/* .loginModal .back-button {
   position: absolute;
   top: 2%;
-  left: 0.5%;
+  left: 0.5%; */
+
+
+/* .loginModal .back-button {
+  position: relative;
+  top: 1%;
+  left: -3%; */
+
+
+.register_back-button {
+  position: relative;
+  top: -13%;
 }
