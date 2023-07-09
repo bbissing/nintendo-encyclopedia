@@ -53,7 +53,7 @@ body {
   height: 35%;
   height: 30%;
   position: relative;
-  top: -10%;
+  top: -6%;
 }
 
 .home_page_header .nintendo_logo {
@@ -271,13 +271,13 @@ h1 {
   top: 35%;
 }
 
-.rosalina {
+.fox {
   display: flex;
-  height: 238%;
+  height: 233%;
   justify-content: flex-end;
   position: relative;
-  right: -15%;
-  top: -15%;
+  right: -50%;
+  top: -10%;
 }
 
 .third_card::before {
@@ -333,13 +333,13 @@ h1 {
   top: 35%;
 }
 
-.fox {
+.rosalina {
   display: flex;
-  height: 233%;
+  height: 238%;
   justify-content: flex-end;
   position: relative;
-  right: -50%;
-  top: -10%;
+  right: -15%;
+  top: -15%;
 }
 
 .fourth_card::before {
@@ -867,8 +867,48 @@ button.deleteBtnYes {
 
 /* ----- MEDIA QUERIES ----- */
 
-@media (min-width: 320px) and (max-width: 480px) {
-/* for smaller devices */
+@media (min-width: 1500px) {
+
+  .home_page_header {
+    top: -10%;
+  }
+
+}
+
+@media (max-width: 1300px) {
+
+  .home_page_header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+    height: 30%;
+    position: relative;
+    top: -3%;
+}
+
+  .home_page_header .nintendo_logo {
+    /* width: 100%; */
+    /* display: flex; */
+    height: 100%;
+    justify-content: center;
+    /* align-items: center; */
+    /* position: absolute; */
+    top: -15%;
+}
+
+  .top_row {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 428px;
+    justify-content: center;
+    align-items: center;
+    top: -20%;
+}
+
   .cards {
     height: 0px;
     display: flex;
@@ -885,7 +925,6 @@ button.deleteBtnYes {
   .first_card {
     border-radius: 10px;
     display: inline-block;
-    /* display: flex; */
     filter: drop-shadow(0 5px 10px 0 #ffffff);
     width: 100%;
     height: 150px;
@@ -894,7 +933,6 @@ button.deleteBtnYes {
     position: relative;
     z-index: 0;
     overflow: hidden;
-    /* right: 42%; */
     top: -15px;
     left: 0%;
     transition: 0.6s ease-in;
@@ -909,6 +947,15 @@ button.deleteBtnYes {
     text-align: center;
     left: 0%;
     top: 35%;
+  }
+
+  .yoshi {
+    display: flex;
+    height: 151%;
+    justify-content: flex-end;
+    position: relative;
+    right: -2%;
+    top: 2%;
   }
 
   .first_card::before {
@@ -929,7 +976,6 @@ button.deleteBtnYes {
   .second_card {
     border-radius: 10px;
     display: inline-block;
-    /* display: flex; */
     filter: drop-shadow(0 5px 10px 0 #ffffff);
     width: 100%;
     height: 150px;
@@ -938,7 +984,6 @@ button.deleteBtnYes {
     position: relative;
     z-index: 0;
     overflow: hidden;
-    /* right: 42%; */
     left: 0%;
     transition: 0.6s ease-in;
     cursor: pointer;
@@ -953,6 +998,15 @@ button.deleteBtnYes {
     text-align: center;
     left: 0%;
     top: 35%;
+  }
+
+  .mario {
+    display: flex;
+    height: 175%;
+    justify-content: flex-end;
+    position: relative;
+    right: -6%;
+    top: -2%;
   }
 
   .second_card::before {
@@ -970,11 +1024,20 @@ button.deleteBtnYes {
     transition: transform 0.25s ease-out;
   }
 
+  .bottom_row {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 428px;
+    justify-content: center;
+    align-items: center;
+    top: -15%;
+}
+
   .third_card {
-    /* top: 15px; */
     border-radius: 10px;
     display: inline-block;
-    /* display: flex; */
     filter: drop-shadow(0 5px 10px 0 #ffffff);
     width: 100%;
     height: 150px;
@@ -983,7 +1046,6 @@ button.deleteBtnYes {
     position: relative;
     z-index: 0;
     overflow: hidden;
-    /* right: 42%; */
     left: 0%;
     top: -5px;
     transition: 0.6s ease-in;
@@ -998,6 +1060,15 @@ button.deleteBtnYes {
     text-align: center;
     left: 0%;
     top: 35%;
+  }
+
+  .fox {
+    display: flex;
+    height: 233%;
+    justify-content: flex-end;
+    position: relative;
+    right: -11%;
+    top: -10%;
   }
 
   .third_card::before {
@@ -1018,7 +1089,6 @@ button.deleteBtnYes {
   .fourth_card {
     border-radius: 10px;
     display: inline-block;
-    /* display: flex; */
     filter: drop-shadow(0 5px 10px 0 #ffffff);
     width: 100%;
     height: 150px;
@@ -1027,7 +1097,6 @@ button.deleteBtnYes {
     position: relative;
     z-index: 0;
     overflow: hidden;
-    /* right: 42%; */
     left: 0%;
     transition: 0.6s ease-in;
     cursor: pointer;
@@ -1044,6 +1113,15 @@ button.deleteBtnYes {
     top: 35%;
   }
 
+  .rosalina {
+    display: flex;
+    height: 268%;
+    justify-content: flex-end;
+    position: relative;
+    right: -2%;
+    top: -15%;
+  }
+
   .fourth_card::before {
     content: "";
     position: absolute;
@@ -1058,8 +1136,312 @@ button.deleteBtnYes {
     transform-origin: 100% 50%;
     transition: transform 0.25s ease-out;
   }
+
+  .logoutButton {
+    border: none;
+    background: transparent;
+    /* text-align: center; */
+    color: #fff;
+    /* display: flex; */
+    /* position: absolute; */
+    cursor: pointer;
+    font-size: 36px;
+  }
+
+  .logout {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    top: -15%;
+  }
 }
-/* for smaller devices */
+
+@media (max-width: 500px) {
+
+  .home_page_header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+    height: 30%;
+    position: relative;
+    top: -3%;
+}
+
+  .home_page_header .nintendo_logo {
+    /* width: 100%; */
+    /* display: flex; */
+    height: 100%;
+    justify-content: center;
+    /* align-items: center; */
+    /* position: absolute; */
+    top: -15%;
+}
+
+  .top_row {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 428px;
+    justify-content: center;
+    align-items: center;
+    top: -20%;
+}
+
+  .cards {
+    height: 0px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+  }
+
+  a {
+    width: 100%;
+    position: relative;
+  }
+
+  .first_card {
+    border-radius: 10px;
+    display: inline-block;
+    filter: drop-shadow(0 5px 10px 0 #ffffff);
+    width: 100%;
+    height: 150px;
+    background-color: #ffffff;
+    padding: 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    top: -15px;
+    left: 0%;
+    transition: 0.6s ease-in;
+    cursor: pointer;
+    color: black;
+}
+
+  .first_card h4 {
+    font-size: x-large;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    left: 0%;
+    top: 35%;
+  }
+
+  .yoshi {
+    display: flex;
+    height: 151%;
+    justify-content: flex-end;
+    position: relative;
+    right: -7%;
+    top: 2%;
+  }
+
+  .first_card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: -280px;
+    background: #000000;
+    height: 275px;
+    width: 60px;
+    border-radius: 32px;
+    transform: scale(5);
+    transform-origin: 100% 50%;
+    transition: transform 0.25s ease-out;
+  }
+
+  .second_card {
+    border-radius: 10px;
+    display: inline-block;
+    filter: drop-shadow(0 5px 10px 0 #ffffff);
+    width: 100%;
+    height: 150px;
+    background-color: #ffffff;
+    padding: 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    left: 0%;
+    transition: 0.6s ease-in;
+    cursor: pointer;
+    color: black;
+    top: 20px;
+}
+
+  .second_card h4 {
+    font-size: x-large;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    left: 0%;
+    top: 35%;
+  }
+
+  .mario {
+    display: flex;
+    height: 175%;
+    justify-content: flex-end;
+    position: relative;
+    right: -16%;
+    top: -2%;
+  }
+
+  .second_card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: -280px;
+    background: #000000;
+    height: 275px;
+    width: 60px;
+    border-radius: 32px;
+    transform: scale(5);
+    transform-origin: 100% 50%;
+    transition: transform 0.25s ease-out;
+  }
+
+  .bottom_row {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 428px;
+    justify-content: center;
+    align-items: center;
+    top: -15%;
+}
+
+  .third_card {
+    border-radius: 10px;
+    display: inline-block;
+    filter: drop-shadow(0 5px 10px 0 #ffffff);
+    width: 100%;
+    height: 150px;
+    background-color: #ffffff;
+    padding: 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    left: 0%;
+    top: -5px;
+    transition: 0.6s ease-in;
+    cursor: pointer;
+    color: black;
+}
+
+  .third_card h4 {
+    font-size: x-large;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    left: 0%;
+    top: 35%;
+  }
+
+  .fox {
+    display: flex;
+    height: 233%;
+    justify-content: flex-end;
+    position: relative;
+    right: -29%;
+    top: -10%;
+  }
+
+  .third_card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: -280px;
+    background: #000000;
+    height: 275px;
+    width: 60px;
+    border-radius: 32px;
+    transform: scale(5);
+    transform-origin: 100% 50%;
+    transition: transform 0.25s ease-out;
+  }
+
+  .fourth_card {
+    border-radius: 10px;
+    display: inline-block;
+    filter: drop-shadow(0 5px 10px 0 #ffffff);
+    width: 100%;
+    height: 150px;
+    background-color: #ffffff;
+    padding: 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    left: 0%;
+    transition: 0.6s ease-in;
+    cursor: pointer;
+    color: black;
+    top: 30px;
+}
+
+  .fourth_card h4 {
+    font-size: x-large;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    left: 0%;
+    top: 35%;
+  }
+
+  .rosalina {
+    display: flex;
+    height: 268%;
+    justify-content: flex-end;
+    position: relative;
+    right: -6%;
+    top: -15%;
+  }
+
+  .fourth_card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: -280px;
+    background: #000000;
+    height: 275px;
+    width: 60px;
+    border-radius: 32px;
+    transform: scale(5);
+    transform-origin: 100% 50%;
+    transition: transform 0.25s ease-out;
+  }
+
+  .logoutButton {
+    border: none;
+    background: transparent;
+    /* text-align: center; */
+    color: #fff;
+    /* display: flex; */
+    /* position: absolute; */
+    cursor: pointer;
+    font-size: 36px;
+  }
+
+  .logout {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    top: -15%;
+  }
+}
 
 /* ----- LOGIN ----- */
 
