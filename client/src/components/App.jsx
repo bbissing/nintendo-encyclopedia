@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import Login from './Login.jsx';
 import Register from './Register.jsx';
-import HomePage from './Homepage.jsx';
+import HomePage from './HomePage.jsx';
 import SearchCharacter from './SearchCharacter.jsx';
 import SearchGames from './SearchGames.jsx';
 import WriteReview from './WriteReview.jsx';

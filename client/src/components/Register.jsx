@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IoArrowBackOutline } from 'react-icons/io5';
-import HomePage from './Homepage.jsx';
+import HomePage from './HomePage.jsx';
 import logo from '../assets/nintendo-logo.png';
 import axios from 'axios';
 

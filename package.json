@@ -7,7 +7,7 @@
     "start": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack --mode=development --watch",
-    "watch": "webpack --watch & nodemon ./server/index.js",
+    "watch": "webpack --mode=development --watch & nodemon ./server/index.js",
     "react-babel": "babel client/src --out-dir client/compiled --presets=@babel/preset-react --source-maps inline --watch"
   },
   "repository": {

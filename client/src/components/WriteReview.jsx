@@ -106,9 +106,13 @@ function WriteReview(props) {
 
   return (
     <>
-      <Link to="/home">
-        <IoArrowBackOutline className="back-button" color={'#262929'} size={30} />
-      </Link>
+      <div className="write_review_header">
+        <div className="back-button">
+          <Link to="/home">
+            <IoArrowBackOutline color={'#262929'} size={30} />
+          </Link>
+        </div>
+      </div>
       {errorMessage ? (
         <div className="ModalForm">
           <div className="errorModal">

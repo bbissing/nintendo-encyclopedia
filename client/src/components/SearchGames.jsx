@@ -50,41 +50,56 @@ function SearchGames() {
     }
   }
 
-  console.log('q: ', q);
-  console.log('item: ', items);
+  // console.log('q: ', q);
+  // console.log('item: ', items);
+  if (items.length > 0) {
+    items.forEach(game => {
+      if (game.deck.length > 200) {
+        let arr = game.deck.split(' ');
+        arr = arr.slice(0, 35);
+        // console.log('arr: ', arr);
+        arr[arr.length - 1] += '...';
+        console.log('last word: ', arr[arr.length - 1]);
+        game.deck = arr.join(' ');
+        console.log('game deck:', game.deck);
+      }
+    })
+  }
 
   return (
     <>
-      <>
-        <Link to="/home">
-          <IoArrowBackOutline className="back-button" color={'#262929'} size={30} />
-        </Link>
-      </>
-      <div className="search-wrap">
-        <div className="search">
-          {/* <label htmlFor="search-form"> */}
-            <input
-                type="text"
-                name="search-form"
-                id="search-form"
-                className="searchTerm"
-                placeholder="Search any character"
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                onKeyDown={handleKeyDown}
-            />
-          {/* </label> */}
-          <button type="submit" className="searchButton" onClick={handleClick}>
-            <IconContext.Provider value={{ className: "magnify-glass" }}>
-                <FiSearch />
-            </IconContext.Provider>
-          </button>
+      <div className="search_games_header">
+        <div className="back-button">
+          <Link to="/home">
+            <IoArrowBackOutline color={'#262929'} size={30} />
+          </Link>
+        </div>
+        <div className="search-wrap">
+          <div className="search">
+            {/* <label htmlFor="search-form"> */}
+              <input
+                  type="text"
+                  name="search-form"
+                  id="search-form"
+                  className="searchTerm"
+                  placeholder="Search any character"
+                  value={q}
+                  onChange={(e) => setQ(e.target.value)}
+                  onKeyDown={handleKeyDown}
+              />
+            {/* </label> */}
+            <button type="submit" className="searchButton" onClick={handleClick}>
+              <IconContext.Provider value={{ className: "magnify-glass" }}>
+                  <FiSearch />
+              </IconContext.Provider>
+            </button>
+          </div>
         </div>
       </div>
       <>
         {typeof items === "object" ? (
           items.map(item => (
-            <div className="search_games_card">
+            <div className="search_games_card" key={item.name}>
               <article>
                 <div className="card-image">
                   <img

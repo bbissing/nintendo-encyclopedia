@@ -50,20 +50,55 @@ function SearchCharacter() {
     }
   }
 
-  console.log('q: ', q);
-  console.log('item: ', item);
+  // console.log('q: ', q);
+  // console.log('item: ', item);
 
   return (
     <>
-      <>
-        <Link to="/home">
-          <IoArrowBackOutline className="back-button" color={'#262929'} size={30} />
-        </Link>
-      </>
-      <div className="search-wrap">
+      <div className="search_character_header">
+      {/* <div className="home_page_header">
+        <div className="nintendo_logo">
+          <img src={logo} alt="nintendo logo"/>
+        </div>
+        <div className="logout">
+        <button type="submit" className="logoutButton" onClick={logOut}>
+          <IconContext.Provider value={{ className: "logout" }}>
+              <CiLogout />
+          </IconContext.Provider>
+        </button>
+        </div>
+      </div> */}
+        <div className="back-button">
+          <Link to="/home">
+            <IoArrowBackOutline color={'#262929'} size={30} />
+          </Link>
+        </div>
+        <div className="search-wrap">
+          <div className="search">
+            {/* <label htmlFor="search-form"> */}
+              <input
+                  type="text"
+                  name="search-form"
+                  id="search-form"
+                  className="searchTerm"
+                  placeholder="Search any character"
+                  value={q}
+                  onChange={(e) => setQ(e.target.value)}
+                  onKeyDown={handleKeyDown}
+              />
+            {/* </label> */}
+            <button type="submit" className="searchButton" onClick={handleClick}>
+              <IconContext.Provider value={{ className: "magnify-glass" }}>
+                  <FiSearch />
+              </IconContext.Provider>
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* <div className="search-wrap">
         <div className="search">
           {/* <label htmlFor="search-form"> */}
-            <input
+            {/* <input
                 type="text"
                 name="search-form"
                 id="search-form"
@@ -72,15 +107,15 @@ function SearchCharacter() {
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 onKeyDown={handleKeyDown}
-            />
+            /> */}
           {/* </label> */}
-          <button type="submit" className="searchButton" onClick={handleClick}>
+          {/* <button type="submit" className="searchButton" onClick={handleClick}>
             <IconContext.Provider value={{ className: "magnify-glass" }}>
                 <FiSearch />
             </IconContext.Provider>
-          </button>
-        </div>
-      </div>
+          </button> */}
+        {/* </div> */}
+      {/* </div> */}
       <>
         {typeof item === "object" ? (
           <div className="searchCharacterCard">
