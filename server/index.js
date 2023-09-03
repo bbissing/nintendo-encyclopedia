@@ -10,12 +10,13 @@ const { postReviewHandler, createUser } = require('../database/controllers/inser
 const { getReviewHandler, retrieveUser } = require('../database/controllers/retrieveData.js');
 const { validate } = require('../database/controllers/validate.js');
 const { deleteReviewHandler } = require('../database/controllers/removeData.js');
+const { editReviewHandler } = require('../database/controllers/editData.js');
 
 const sessionConfig = {
   name: 'lets-a-go',
   secret: process.env.SECRET,
   cookie: {
-    maxAge: 1000 * 60 * 60,
+    maxAge: 1000 * 60 * 5,
     // maxAge: 1000 * 60 * 2,
     secure: false, // for production, set secure to true for https only access
     httpOnly: true // true mean no access from JS
@@ -119,6 +120,8 @@ app.get('/logout', (req, res) => {
     req.session.destroy();
   }
 })
+
+app.put('/edit-review', editReviewHandler);
 
 // ---- Catch all for routing ---- //
 

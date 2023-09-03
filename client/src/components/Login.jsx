@@ -31,7 +31,7 @@ function Login(props) {
 
   return (
     <>
-      <div className="header">
+      <div className="login_header">
         <div className="nintendo_logo">
           <img src={logo} alt="nintendo logo"/>
         </div>

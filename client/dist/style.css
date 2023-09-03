@@ -21,6 +21,13 @@ html, body {
   height: 100%;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: red;
+}
+
 .back-button {
   position: relative;
   left: -34%;
@@ -42,7 +49,7 @@ html, body {
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9DBFAF;
-  font-family: inherit
+  font-family: inherit;
 }
 
 .searchTerm:focus {
@@ -75,7 +82,41 @@ html, body {
   width: 30%;
 }
 
+h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+.nintendo_logo {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -15%;
+}
+
+.nintendo_logo img {
+  height: 100%;
+  display: flex;
+}
+
+hr.solid {
+  border-top: 0px solid #bbb;
+}
+
 /* ----- LOGIN ----- */
+
+.login_header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  position: relative;
+  top: -13%;
+}
 
 .loginForm {
   display: flex;
@@ -84,7 +125,7 @@ html, body {
   width: 100%;
   position: relative;
   align-items: center;
-  top: -34%;
+  top: -25%;
 }
 
 .loginModal {
@@ -182,13 +223,13 @@ html, body {
   align-items: center;
   left: 0%;
   top: 100%;
-  flex-direction: row;
+  /* flex-direction: row; */
   line-height: 24px;
   text-decoration-line: underline;
   color: white;
-  flex: none;
+  /* flex: none;
   order: 1;
-  flex-grow: 0;
+  flex-grow: 0; */
 }
 
 .loginModal .signUp-btn:hover {
@@ -196,29 +237,92 @@ html, body {
   cursor: pointer;
 }
 
-.register_back-button {
+/* ----- REGISTER ----- */
+
+/* .register_back-button {
   position: relative;
-  top: -13%;
-}
+  top: -55px;
+  left: -48.5%; */
 
-/* ----- HOMEPAGE ----- */
-
-body {
+.existingUserConfirmation {
+  width: 100%;
+  height: 18px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  padding: 10px 0px;
+  background: none;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  background-color: red;
+  align-items: center;
+  left: 0%;
+  top: 0px;
+  flex-direction: row;
+  line-height: 24px;
+  color: white;
 }
 
-.header {
+.register_header {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 30%;
   position: relative;
-  top: -19%;
+  top: -13%;
 }
+
+.login-page-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  width: 100%;
+  height: 18px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  padding: 10px 0px;
+  top: -10px;
+  background: none;
+  border: none;
+}
+
+.login-page-btn-link {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0%;
+  top: 100%;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: white;
+}
+
+.loginModal .login-page-btn:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+/* ----- HOMEPAGE ----- */
+
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: red; */
+
 
 .home_page_header {
   width: 100%;
@@ -226,45 +330,43 @@ body {
   justify-content: center;
   align-items: center;
   height: 35%;
-  height: 30%;
   position: relative;
-  top: -6%;
+  top: -8%;
 }
 
-.home_page_header .nintendo_logo {
+/* .home_page_header .nintendo_logo {
   width: 100%;
   display: flex;
   height: 100%;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: -15%;
-}
+  top: -15%; */
 
-h1 {
-  color: white;
-  font-size: 2rem;
-}
 
-.nintendo_logo {
+
+/* .nintendo_logo {
   width: 100%;
   display: flex;
   height: 100%;
   justify-content: center;
   align-items: center;
-}
+  position: absolute;
+  top: -15%; */
 
-.nintendo_logo img {
+
+/* .nintendo_logo img {
   height: 100%;
-  display: flex;
-}
+  display: flex; */
 
-.top_row {
+
+ .top_row {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   height: 250px;
+  align-items: center;
   justify-content: center;
   top: -20%;
 }
@@ -276,12 +378,15 @@ h1 {
   width: 100%;
   height: 250px;
   justify-content: center;
-  top: -10%;
+  align-items: center;
+  top: -8%;
 }
 
 .cards {
   height: 0px;
   display: flex;
+  position: relative;
+  top: -125px;
 }
 
 .first_card {
@@ -692,7 +797,7 @@ ul.card-list {
   border-radius: 2px;
   padding: 45px 30px;
   width: 85%;
-  height: 130px;
+  height: 250px;
 }
 
 .inputField {
@@ -744,7 +849,7 @@ ul.card-list {
   top: 15px;
 }
 
-.Modal button {
+.submitButton button {
   position: relative;
   top: 15px;
   align-items: center;
@@ -761,6 +866,21 @@ ul.card-list {
   padding: 10px 11px 10px 11px;
   text-transform: uppercase;
   width: 100%;
+}
+
+textarea#review {
+  outline: none;
+  border: 0;
+  color: var(--cosmiclatte);
+  background: transparent;
+  font-family: var(--font);
+  display: flex;
+  position: relative;
+  font-size: 16px;
+  font-weight: 300;
+  width: 100%;
+  padding: 10px 0px;
+  resize: none;
 }
 
 .errorModal button {
@@ -788,12 +908,12 @@ button.deleteBtnYes {
   background: red;
 }
 
-.Modal button:hover {
+.submitButton button:hover {
   transform: scale(1.02);
   cursor: pointer;
 }
 
-.Modal button:active {
+.submitButton button:active {
   transform: scale(1.01);
   cursor: pointer;
 }
@@ -809,6 +929,15 @@ button.deleteBtnYes {
 }
 
 /* ----- MY REVIEWS ----- */
+
+.my_reviews_header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5%;
+}
 
 .reviews {
   position: absolute;
@@ -827,15 +956,20 @@ button.deleteBtnYes {
   padding: 0px;
 }
 
+.reviews article {
+  display: flex;
+  position: relative;
+}
+
 .reviews .card-image {
   max-height: 150px;
-  position: relative;
+  position: absolute;
   height: 100%;
   top: -5%;
   padding-left: 10px;
-  display: flex;
+  display: block;
   align-items: center;
-  left: 5px;
+  left: 2%;
 }
 
 .reviews .card-content {
@@ -844,11 +978,6 @@ button.deleteBtnYes {
   position: relative;
   align-items: center;
   margin: 0px 25px;
-}
-
-.reviews article {
-  display: flex;
-  position: relative;
 }
 
 .reviews .card-image-default {
@@ -865,8 +994,13 @@ button.deleteBtnYes {
 
 .deleteReview {
   position: absolute;
-  top: 35%;
-  right: 3%;
+  top: 65%;
+  right: 2%;
+  background: red;
+  border-radius: 47%;
+  width: 40px;
+  height: 40px;
+  right: 2%;
 }
 
 .deleteButton {
@@ -881,20 +1015,113 @@ button.deleteBtnYes {
 .trash-bin {
   color: white;
   position: relative;
-  top: 10%;
+  top: 3px;
+  left: -1px;
+}
+
+.editReview {
+  position: absolute;
+  top: 7%;
+  background: rgb(55, 191, 250);
+  border-radius: 47%;
+  width: 40px;
+  height: 40px;
+  right: 2%;
+}
+
+.editButton {
+  border: none;
+  background: transparent;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.pencil {
+  color: white;
+  position: relative;
+  top: 3px;
+}
+
+/* ----- MY REVIEWS - MODAL ----- */
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: rgba(200, 200, 200); */
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContainer {
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.modalContainer .title {
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.titleCloseBtn button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  position: relative;
+  color: white
+}
+
+.modalContainer .body {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.modalContainer .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContainer .footer button {
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#cancelBtn {
+  background-color: crimson;
 }
 
 /* ----- MEDIA QUERIES ----- */
 
-@media (min-width: 1500px) {
-
-  .home_page_header {
-    top: -10%;
-  }
-
-}
-
-@media (max-width: 1300px) {
+/* ##Device = Tablets and Laptops */
+@media (min-width: 481px) and (max-width: 1280px) {
 
   .home_page_header {
     width: 100%;
@@ -1172,6 +1399,7 @@ button.deleteBtnYes {
 
 }
 
+/* ##Device = Mobile */
 @media (max-width: 480px) {
 
   .back-button {
@@ -1180,27 +1408,70 @@ button.deleteBtnYes {
     top: -35px;
   }
 
+  /* .search {
+    width: 100%;
+    position: relative;
+    display: flex; */
+
+
+  /* .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+    font-family: inherit; */
+
+
+  /* .searchTerm:focus {
+    color: black; */
+
+  .search-wrap {
+    width: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .nintendo_logo {
+    width: 100%;
+    display: flex;
+    height: 105%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: unset;
+  }
+
   /* ------ LOGIN ------ */
 
+  .login_header {
+    top: -10%;
+  }
+
   .loginForm {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     height: 400px;
     width: 100%;
     position: relative;
-    align-items: center;
+    align-items: center; */
     top: -20%;
   }
 
   .loginModal {
-    background: var(--onyx);
+    /* background: var(--onyx);
     border-radius: 2px;
-    padding: 15px 30px 35px;
+    padding: 15px 30px 35px; */
     width: 85%;
-    height: 300px;
+    /* height: 300px; */
   }
 
-  .loginModal input {
+  /* .loginModal input {
     outline: none;
     border-radius: 20px;
     border-color: white;
@@ -1213,24 +1484,24 @@ button.deleteBtnYes {
     width: 98.85%;
     display: flex;
     margin: 15px 0px;
-    padding: 10px 0px 10px 10px;
-  }
+    padding: 10px 0px 10px 10px; */
 
-  .loginModal h3 {
+
+  /* .loginModal h3 {
     position: relative;
     width: 100%;
     display: flex;
     top: -10px;
-    color: white;
-  }
+    color: white; */
 
-  .loginModal label {
+
+  /* .loginModal label {
     color: white;
     display: flex;
-    position: relative;
-  }
+    position: relative; */
 
-  .loginModal .login-btn {
+
+  /* .loginModal .login-btn {
     position: relative;
     top: 10px;
     align-items: center;
@@ -1246,21 +1517,21 @@ button.deleteBtnYes {
     outline: none;
     padding: 10px 11px 10px 11px;
     text-transform: uppercase;
-    width: 100%;
-  }
+    width: 100%; */
 
-  .loginModal .login-btn:hover {
+
+  /* .loginModal .login-btn:hover {
     transform: scale(1.02);
-    cursor: pointer;
-  }
+    cursor: pointer; */
 
-  .loginModal .login-btn:active {
+
+  /* .loginModal .login-btn:active {
     transform: scale(1.01);
-    cursor: pointer;
-  }
+    cursor: pointer; */
+
 
   .signUp-btn {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -1270,17 +1541,17 @@ button.deleteBtnYes {
     height: 18px;
     border-radius: 5px;
     margin: 10px 0px;
-    padding: 10px 0px;
+    padding: 10px 0px; */
     top: 10px;
-    flex: none;
+    /* flex: none;
     order: 1;
     align-self: stretch;
     flex-grow: 0;
     background: none;
-    border: none;
+    border: none; */
   }
 
-  .signUp-btn-link {
+  /* .signUp-btn-link {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -1297,104 +1568,64 @@ button.deleteBtnYes {
     color: white;
     flex: none;
     order: 1;
-    flex-grow: 0;
-  }
+    flex-grow: 0; */
 
-  .loginModal .signUp-btn:hover {
+
+  /* .loginModal .signUp-btn:hover {
     transform: scale(1.02);
-    cursor: pointer;
-  }
+    cursor: pointer; */
 
-  .register_back-button {
-    position: relative;
-    top: -13%;
-  }
+  /* ----- SIGNUP ----- */
+
+
 
   /* ------ HOMEPAGE ------ */
 
-  body {
+  /* body {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    background-color: red;
-  }
+    background-color: red; */
 
-  .header {
+
+  /* .header {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30%;
-    top: -8%;
-  }
+    top: -8%; */
+
 
   .home_page_header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 30%;
-    position: relative;
-    top: -3%;
+    top: -5%;
   }
 
-  .home_page_header .nintendo_logo {
-    /* height: 100%;
-    justify-content: center;
-    top: -15%; */
+  /* .home_page_header .nintendo_logo {
     width: 100%;
     display: flex;
     height: 100%;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -15%;
-  }
-
-  h1 {
-    color: white;
-    font-size: 2rem;
-  }
-
-  .nintendo_logo {
-    width: 100%;
-    display: flex;
-    height: 125%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .nintendo_logo img {
-    height: 100%;
-    display: flex;
-  }
+    top: -15%; */
 
   .top_row {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
     height: 428px;
-    justify-content: center;
-    align-items: center;
     top: -10%;
   }
 
   .bottom_row {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
     height: 428px;
-    justify-content: center;
-    align-items: center;
-    top: 5%;
+    top: unset;
   }
 
   .cards {
     height: 0px;
     display: flex;
     justify-content: center;
+    position: static;
     width: 100%;
   }
 
@@ -1677,7 +1908,8 @@ button.deleteBtnYes {
     justify-content: right;
     align-items: center;
     position: relative;
-    top: -15%;
+    top: unset;
+    right: -5px;
   }
 
   /* ------ SEARCH CHARACTER ------ */
@@ -1691,13 +1923,7 @@ button.deleteBtnYes {
     top: 5%;
   }
 
-  .search {
-    width: 100%;
-    position: relative;
-    display: flex;
-  }
-
-  .searchTerm {
+  /* .searchTerm {
     width: 100%;
     border: 3px solid #00B4CC;
     border-right: none;
@@ -1706,14 +1932,14 @@ button.deleteBtnYes {
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #9DBFAF;
-    font-family: inherit
-  }
+    font-family: inherit */
 
-  .searchTerm:focus {
-    color: black;
-  }
 
-  .searchButton {
+  /* .searchTerm:focus {
+    color: black; */
+
+
+  /* .searchButton {
     width: 40px;
     height: 36px;
     border: 1px solid #00B4CC;
@@ -1722,26 +1948,24 @@ button.deleteBtnYes {
     color: #fff;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    font-size: 20px;
-  }
+    font-size: 20px; */
 
-  .search input {
-    font-family: 'Open Sans', sans-serif;
-  }
 
-  .magnify-glass {
+  /* .search input {
+    font-family: 'Open Sans', sans-serif; */
+
+  /* .magnify-glass {
     color: white;
     position: relative;
-    top: 10%;
-  }
+    top: 10%; */
 
-  .search-wrap {
+  /* .search-wrap {
     width: 85%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-  }
+    transform: translate(-50%, -50%); */
+
 
   .searchCharacterCard {
     position: relative;
@@ -1808,13 +2032,12 @@ button.deleteBtnYes {
     top: 5%;
   }
 
-  .search {
+  /* .search {
     width: 100%;
     position: relative;
-    display: flex;
-  }
+    display: flex; */
 
-  .searchTerm {
+  /* .searchTerm {
     width: 100%;
     border: 3px solid #00B4CC;
     border-right: none;
@@ -1823,14 +2046,14 @@ button.deleteBtnYes {
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #9DBFAF;
-    font-family: inherit
-  }
+    font-family: inherit */
 
-  .searchTerm:focus {
-    color: black;
-  }
 
-  .searchButton {
+  /* .searchTerm:focus {
+    color: black; */
+
+
+  /* .searchButton {
     width: 40px;
     height: 36px;
     border: 1px solid #00B4CC;
@@ -1839,26 +2062,25 @@ button.deleteBtnYes {
     color: #fff;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    font-size: 20px;
-  }
+    font-size: 20px; */
 
-  .search input {
-    font-family: 'Open Sans', sans-serif;
-  }
 
-  .magnify-glass {
+  /* .search input {
+    font-family: 'Open Sans', sans-serif; */
+
+
+  /* .magnify-glass {
     color: white;
     position: relative;
-    top: 10%;
-  }
+    top: 10%; */
 
-  .search-wrap {
+  /* .search-wrap {
     width: 85%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-  }
+    transform: translate(-50%, -50%); */
+
 
   .search_games_card {
     position: relative;
@@ -1929,20 +2151,30 @@ button.deleteBtnYes {
 
   /* ------ WRITE REVIEW ------ */
 
-  .ModalForm {
+  .write_review_header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5%;
+  }
+
+  /* .ModalForm {
     align-items: center;
     display: flex;
     justify-content: center;
     position: relative;
-    width: 100%;
-  }
+    width: 100%; */
+
 
   .Modal {
-    background: var(--onyx);
-    border-radius: 2px;
-    padding: 45px 30px;
-    width: 85%;
-    height: 130px;
+    padding: 45px 35px;
+  }
+
+  .reviewForm {
+    position: relative;
+    top: -10px;
   }
 
   .inputField {
@@ -1955,8 +2187,8 @@ button.deleteBtnYes {
     background: var(--onyx);
     border-radius: 33px;
     padding: 25px 25px;
-    width: 795px;
-    height: 165px;
+    height: unset;
+    width: unset;
   }
 
   .errorModal h3 {
@@ -1964,6 +2196,7 @@ button.deleteBtnYes {
     justify-content: center;
     position: relative;
     align-items: center;
+    text-align: center;
     display: flex;
   }
 
@@ -1972,6 +2205,7 @@ button.deleteBtnYes {
     justify-content: center;
     position: relative;
     align-items: center;
+    text-align: center;
     display: flex;
   }
 
@@ -1992,11 +2226,6 @@ button.deleteBtnYes {
   .submitButton {
     position: relative;
     top: 15px;
-  }
-
-  .Modal button {
-    position: relative;
-    top: 15px;
     align-items: center;
     background: green;
     border: 0;
@@ -2009,6 +2238,19 @@ button.deleteBtnYes {
     justify-content: center;
     outline: none;
     padding: 10px 11px 10px 11px;
+    text-transform: uppercase;
+  }
+
+  .submitButton button {
+    position: relative;
+    top: 0px;
+    background: green;
+    border: 0;
+    color: white;
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 500;
+    outline: none;
     text-transform: uppercase;
     width: 100%;
   }
@@ -2036,14 +2278,52 @@ button.deleteBtnYes {
 
   button.deleteBtnYes {
     background: red;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    border: 0;
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    display: inline;
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 5px;
+    margin-right: 5px;
+    outline: none;
+    padding: 10px 11px 10px 11px;
+    text-transform: uppercase;
+    width: 45%;
   }
 
-  .Modal button:hover {
+button.deleteBtnNo {
+    position: relative;
+    top: 0%;
+    left: 5%;
+    background: green;
+    border: 0;
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    display: inline;
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 5px;
+    margin-right: 5px;
+    outline: none;
+    padding: 10px 11px 10px 11px;
+    text-transform: uppercase;
+    width: 45%;
+}
+
+  .submitButton button:hover {
     transform: scale(1.02);
     cursor: pointer;
   }
 
-  .Modal button:active {
+  .submitButton button:active {
     transform: scale(1.01);
     cursor: pointer;
   }
@@ -2060,78 +2340,108 @@ button.deleteBtnYes {
 
   /* ------ MY REVIEWS ------ */
 
+  .my_reviews_header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5%;
+  }
+
   .reviews {
     position: absolute;
     display: grid;
-    top: 8%;
-    width: 99.4%;
+    top: 5%;
+    width: 100%;
   }
 
   .reviews .card {
     position: relative;
-    display: inherit;
-    align-items: center;
-    background-color: rgb(50, 50, 50);
-    height: 180px;
-    margin: 0.5em 0;
-    padding: 0px;
-  }
-
-  .reviews .card-image {
-    max-height: 150px;
-    position: relative;
-    height: 100%;
-    top: -5%;
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-    left: 5px;
-  }
-
-  .reviews .card-content {
-    padding: 25px 25px;
+    top: 15%;
     display: grid;
-    position: relative;
     align-items: center;
-    margin: 0px 25px;
+    height: 180px;
+    width: 100%;
+    margin: 0.5em 0;
+    background-color: rgb(50, 50, 50);
+    padding: 0px;
   }
 
   .reviews article {
     display: flex;
     position: relative;
+    align-items: center;
+  }
+
+  .reviews .card-image {
+    max-height: 150px;
+    display: flex;
+    position: relative;
+    height: 100%;
+    top: -5%;
+    padding-left: 0px;
+    align-items: center;
+    left: 2%;
+  }
+
+  .reviews .card-content {
+    padding: 0px 0px;
+    position: relative;
+    display: grid;
+    left: 7%;
+    align-items: center;
+    margin: 0px 0px;
+  }
+
+  .reviews .card-content .card-name {
+    color: white;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    font-size: large;
+  }
+
+  /* Once text in .card-list reaches 28 characters, reduce its width down to 85% */
+  /* Once text in .card-list reaches 130 characters, reduce its width down to 75% and its font size down to 13px */
+  /* The changes you make should only pertain to this specific card, it should not affect the other cards */
+  /* 280 characters max */
+  .reviews .card-content .card-list {
+    color: white;
+    margin: 5px 0px 0px 0px;
+    padding: 0px 0px;
+    font-size: 15px;
+    /* width: 100%; */
+    inline-size: 200px;
   }
 
   .reviews .card-image-default {
-    max-height: 125px;
+    max-height: 150px;
+    display: flex;
     position: relative;
-    top: 18px;
-    left: 25px;
+    height: 100%;
+    top: -5%;
+    padding-left: 0px;
+    align-items: center;
+    left: 2%;
   }
 
   .reviews .card-image-default img {
-    width: 120px;
+    width: 90px;
     height: 130px;
   }
 
-  .deleteReview {
-    position: absolute;
-    top: 35%;
-    right: 3%;
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
   }
 
-  .deleteButton {
+  .titleCloseBtn button {
+    background-color: transparent;
     border: none;
-    background: transparent;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
+    font-size: 25px;
     cursor: pointer;
-    font-size: 30px;
-  }
-
-  .trash-bin {
-    color: white;
     position: relative;
-    top: 10%;
+    color: white
   }
 
 }

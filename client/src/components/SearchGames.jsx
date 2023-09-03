@@ -57,9 +57,14 @@ function SearchGames() {
       if (game.deck.length > 200) {
         let arr = game.deck.split(' ');
         arr = arr.slice(0, 35);
+        let lastWord = arr[arr.length - 1];
+        let regex = /\p{P}/gu;
+        // console.log('does last word have punctuation?:', regex.test(lastWord));
         // console.log('arr: ', arr);
-        arr[arr.length - 1] += '...';
-        console.log('last word: ', arr[arr.length - 1]);
+        if (!regex.test(lastWord)) {
+          arr[arr.length - 1] += '...';
+        }
+        // console.log('last word: ', arr[arr.length - 1]);
         game.deck = arr.join(' ');
         console.log('game deck:', game.deck);
       }

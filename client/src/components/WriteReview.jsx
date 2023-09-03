@@ -8,7 +8,8 @@ import defaultPic from '../assets/default_profile_pic.png';
 function WriteReview(props) {
   // const [modalOpen, setModal] = useState(true);
   const [errorMessage, setError] = useState(false);
-  const [name, setName] = useState('');
+  // const [name, setName] = useState('');
+  const [charID, setCharID] = useState('');
   // const [confirmation, setConfirmation] = useState(false);
   // console.log('props:', props);
 
@@ -44,12 +45,15 @@ function WriteReview(props) {
 		e.preventDefault();
     let name = e.target.name.value;
     let review = e.target.review.value;
-    setName(name);
+    // setName(name);
     // let userId = props.userId;
     let userId = 7;
-    let charId = Math.floor(Math.random() * 100) + 1;
+    // let charId = Math.floor(Math.random() * 100) + 1;
+    let charId = '3003-' + Math.floor((Math.random() * 3000) + 30);
     console.log('name: ', e.target.name.value);
     console.log('review: ', e.target.review.value);
+    console.log('charI: ', charId);
+    console.log('this is a another test');
     (async () => {
       try {
         let image = defaultPic;
@@ -62,6 +66,7 @@ function WriteReview(props) {
           // if (temp.data.)
           image = temp.data.image.thumb_url;
           charId = data[name.toLowerCase()];
+          setCharID(charId);
           // console.log('image: ', image);
         };
         const response = await axios.post('/post-review', {
@@ -93,7 +98,7 @@ function WriteReview(props) {
     //then set errorMessage to false
     (async() => {
       try {
-        await axios.post('/delete-review', { name });
+        await axios.post('/delete-review', { charID });
         alert("Your review has been deleted. Please write a new review.");
         setError(false);
         // setConfirmation(true);
@@ -125,7 +130,7 @@ function WriteReview(props) {
       ) : (
         <div className="ModalForm">
           <div className="Modal">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="reviewForm">
               <div className="inputField">
                 <label htmlFor="name"></label>
                 <input
@@ -134,12 +139,15 @@ function WriteReview(props) {
                   autoComplete="false"
                   required
                   type="text"
-                  placeholder="Mario"
+                  placeholder="Character Name (ex: Mario)"
                 />
+              </div>
+              <div>
+                <hr className="solid"></hr>
               </div>
               <div className="inputField">
                 <label htmlFor="review"></label>
-                <input
+                <textarea
                   id="review"
                   name="review"
                   autoComplete="false"
@@ -147,6 +155,8 @@ function WriteReview(props) {
                   type="text"
                   placeholder="Write Your Review"
                   maxLength="300"
+                  rows="6"
+                  cols="66"
                 />
               </div>
               <div className="submitButton">
