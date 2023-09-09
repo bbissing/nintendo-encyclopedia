@@ -110,9 +110,9 @@ hr.solid {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30%;
+  height: 40%;
   position: relative;
-  top: -13%;
+  top: -8%;
 }
 
 .loginForm {
@@ -122,7 +122,7 @@ hr.solid {
   width: 100%;
   position: relative;
   align-items: center;
-  top: -25%;
+  top: -22%;
 }
 
 .loginModal {
@@ -705,6 +705,7 @@ ul.card-list {
   display: flex;
   position: relative;
   align-items: center;
+  width: 98%
 }
 
 .search_games_card .card-image {
@@ -728,7 +729,7 @@ ul.card-list {
   position: relative;
   align-items: center;
   margin: 0px 0px;
-  left: 5%;
+  left: 2%;
 }
 
 /* ----- WRITE REVIEW ----- */
@@ -1681,11 +1682,6 @@ button.deleteBtnYes {
     height: 130px;
   }
 
-  /* .search_games_card .card-content {
-    margin: 0px 0px;
-    padding: 0px 0px;
-    left: 5%; */
-
   .search_games_card .card-content {
     padding: 0px 0px;
     display: grid;
@@ -1713,8 +1709,13 @@ button.deleteBtnYes {
     top: 5%;
   }
 
+  .ModalForm {
+    width: 100%;
+  }
+
   .Modal {
     padding: 45px 35px;
+    width: 100%;
   }
 
   .reviewForm {
@@ -1810,7 +1811,7 @@ button.deleteBtnYes {
     width: 45%;
   }
 
-button.deleteBtnNo {
+  button.deleteBtnNo {
     position: relative;
     top: 0%;
     left: 5%;
@@ -1828,7 +1829,7 @@ button.deleteBtnNo {
     padding: 10px 11px 10px 11px;
     text-transform: uppercase;
     width: 45%;
-}
+  }
 
   .submitButton button:hover {
     transform: scale(1.02);
