@@ -91,7 +91,8 @@ h1 {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: -15%;
+  /* top: -15%; */
+  top: 0%;
 }
 
 .nintendo_logo img {
@@ -110,27 +111,37 @@ hr.solid {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40%;
-  position: relative;
-  top: -8%;
+  height: 30%;
+  position: absolute;
+  top: 0%;
 }
 
 .loginForm {
   display: flex;
   justify-content: center;
-  height: 400px;
   width: 100%;
   position: relative;
   align-items: center;
-  top: -22%;
 }
 
 .loginModal {
   background: var(--onyx);
   border-radius: 2px;
-  padding: 15px 30px 35px;
-  width: 30%;
+  padding: 10px 25px 25px;
+  width: 40%;
   height: 300px;
+}
+
+.loginModal h3 {
+  position: relative;
+  display: flex;
+  color: white;
+}
+
+.loginModal label {
+  color: white;
+  display: flex;
+  position: relative;
 }
 
 .loginModal input {
@@ -143,24 +154,13 @@ hr.solid {
   font-size: 16px;
   position: relative;
   font-weight: 300;
-  width: 98.85%;
   display: flex;
+  width: 99%;
+  justify-content: center;
+  align-items: center;
   margin: 15px 0px;
-  padding: 10px 0px 10px 10px;
-}
-
-.loginModal h3 {
-  position: relative;
-  width: 100%;
-  display: flex;
-  top: -10px;
-  color: white;
-}
-
-.loginModal label {
-  color: white;
-  display: flex;
-  position: relative;
+  padding: 10px 0px;
+  text-indent: 10px;
 }
 
 .loginModal .login-btn {
@@ -192,6 +192,14 @@ hr.solid {
   cursor: pointer;
 }
 
+.submit a {
+  width: 25%;
+  position: relative;
+  display: flex;
+  left: 37.5%;
+  top: 15px;
+}
+
 .signUp-btn {
   display: flex;
   flex-direction: row;
@@ -202,9 +210,8 @@ hr.solid {
   width: 100%;
   height: 18px;
   border-radius: 5px;
-  margin: 10px 0px;
+  margin: 5px 0px;
   padding: 10px 0px;
-  top: 19px;
   background: none;
   border: none;
 }
@@ -232,6 +239,38 @@ hr.solid {
 
 /* ----- REGISTER ----- */
 
+.register_header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  position: absolute;
+  top: 0%;
+}
+
+.login-page-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  width: 100%;
+  height: 18px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  padding: 10px 0px;
+  top: -10px;
+  background: none;
+  border: none;
+}
+
+.signupForm .submit a {
+  top: -15px;
+  height: 20px;
+}
+
 .existingUserConfirmation {
   width: 100%;
   height: 18px;
@@ -253,33 +292,6 @@ hr.solid {
   flex-direction: row;
   line-height: 24px;
   color: white;
-}
-
-.register_header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30%;
-  position: relative;
-  top: -13%;
-}
-
-.login-page-btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  position: relative;
-  width: 100%;
-  height: 18px;
-  border-radius: 5px;
-  margin: 10px 0px;
-  padding: 10px 0px;
-  top: -10px;
-  background: none;
-  border: none;
 }
 
 .login-page-btn-link {
@@ -310,9 +322,34 @@ hr.solid {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40%;
+  /* height: 30%; */
+  height: 35%;
+  position: absolute;
+  top: 0%;
+}
+
+.home_page_header .nintendo_logo {
+  top: -15%;
+}
+
+.logout {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  justify-content: right;
+  align-items: center;
   position: relative;
-  top: -8%;
+  top: -15%;
+  /* new property */
+  right: 25px;
+}
+
+.logoutButton {
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 36px;
 }
 
  .top_row {
@@ -323,7 +360,7 @@ hr.solid {
   height: 250px;
   align-items: center;
   justify-content: center;
-  top: -20%;
+  top: 10%;
 }
 
 .bottom_row {
@@ -334,7 +371,7 @@ hr.solid {
   height: 250px;
   justify-content: center;
   align-items: center;
-  top: -8%;
+  top: 0%;
 }
 
 .cards {
@@ -347,7 +384,6 @@ hr.solid {
 .first_card {
   border-radius: 10px;
   display: inline-block;
-  filter: drop-shadow(0 5px 10px 0 #ffffff);
   width: 350px;
   height: 150px;
   background-color: #ffffff;
@@ -359,6 +395,30 @@ hr.solid {
   transition: 0.6s ease-in;
   cursor: pointer;
   color: black;
+}
+
+.first_card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -15px;
+  right: -15px;
+  background: #000000;
+  height: 275px;
+  width: 25px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.25s ease-out;
+}
+
+.first_card:hover {
+  color: white;
+}
+
+.first_card:hover::before {
+  transition-delay:0.2s;
+  transform: scale(40);
 }
 
 .first_card h4 {
@@ -378,38 +438,12 @@ hr.solid {
   top: 0%;
 }
 
-.first_card::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -15px;
-  right: -15px;
-  background: #000000;
-  height: 275px;
-  width: 25px;
-  border-radius: 32px;
-  transform: scale(1);
-  transform-origin: 50% 50%;
-  transition: transform 0.25s ease-out;
-}
-
-.first_card:hover::before {
-  transition-delay:0.2s;
-  transform: scale(40);
-}
-
-.first_card:hover {
-  color: white;
-}
-
-.first_card p {
-  padding: 10px 0;
-}
+/* .first_card p {
+  padding: 10px 0; */
 
 .second_card {
   border-radius: 10px;
   display: inline-block;
-  filter: drop-shadow(0 5px 10px 0 #ffffff);
   width: 350px;
   height: 150px;
   background-color: #ffffff;
@@ -421,23 +455,6 @@ hr.solid {
   transition: 0.6s ease-in;
   cursor: pointer;
   color: black;
-}
-
-.second_card h4 {
-  font-size: x-large;
-  position: relative;
-  margin: auto;
-  left: 25%;
-  top: 35%;
-}
-
-.mario {
-  display: flex;
-  height: 185%;
-  justify-content: flex-end;
-  position: relative;
-  right: -34%;
-  top: 0%;
 }
 
 .second_card::before {
@@ -464,14 +481,29 @@ hr.solid {
   color: #ffffff;
 }
 
-.second_card p {
-  padding: 10px 0;
+.second_card h4 {
+  font-size: x-large;
+  position: relative;
+  margin: auto;
+  left: 25%;
+  top: 35%;
 }
+
+.mario {
+  display: flex;
+  height: 185%;
+  justify-content: flex-end;
+  position: relative;
+  right: -34%;
+  top: 0%;
+}
+
+/* .second_card p {
+  padding: 10px 0; */
 
 .third_card {
   border-radius: 10px;
   display: inline-block;
-  filter: drop-shadow(0 5px 10px 0 #ffffff);
   width: 350px;
   height: 150px;
   background-color: #ffffff;
@@ -483,23 +515,6 @@ hr.solid {
   transition: 0.6s ease-in;
   cursor: pointer;
   color: black;
-}
-
-.third_card h4 {
-  font-size: x-large;
-  position: relative;
-  margin: auto;
-  left: 25%;
-  top: 35%;
-}
-
-.fox {
-  display: flex;
-  height: 233%;
-  justify-content: flex-end;
-  position: relative;
-  right: -50%;
-  top: 0%;
 }
 
 .third_card::before {
@@ -526,14 +541,29 @@ hr.solid {
   color: #ffffff;
 }
 
-.third_card p {
-  padding: 10px 0;
+.third_card h4 {
+  font-size: x-large;
+  position: relative;
+  margin: auto;
+  left: 25%;
+  top: 35%;
 }
+
+.fox {
+  display: flex;
+  height: 233%;
+  justify-content: flex-end;
+  position: relative;
+  right: -50%;
+  top: 0%;
+}
+
+/* .third_card p {
+  padding: 10px 0; */
 
 .fourth_card {
   border-radius: 10px;
   display: inline-block;
-  filter: drop-shadow(0 5px 10px 0 #ffffff);
   width: 350px;
   height: 150px;
   background-color: #ffffff;
@@ -545,23 +575,6 @@ hr.solid {
   transition: 0.6s ease-in;
   cursor: pointer;
   color: black;
-}
-
-.fourth_card h4 {
-  font-size: x-large;
-  position: relative;
-  margin: auto;
-  left: 25%;
-  top: 35%;
-}
-
-.rosalina {
-  display: flex;
-  height: 238%;
-  justify-content: flex-end;
-  position: relative;
-  right: -20%;
-  top: 0%;
 }
 
 .fourth_card::before {
@@ -588,27 +601,25 @@ hr.solid {
   color: #ffffff;
 }
 
-.fourth_card p {
-  padding: 10px 0;
-}
-
-.logoutButton {
-  border: none;
-  background: transparent;
-  color: #fff;
-  cursor: pointer;
-  font-size: 36px;
-}
-
-.logout {
-  width: 100%;
-  display: flex;
-  height: 100%;
-  justify-content: right;
-  align-items: center;
+.fourth_card h4 {
+  font-size: x-large;
   position: relative;
-  top: -15%;
+  margin: auto;
+  left: 25%;
+  top: 35%;
 }
+
+.rosalina {
+  display: flex;
+  height: 238%;
+  justify-content: flex-end;
+  position: relative;
+  right: -20%;
+  top: 0%;
+}
+
+/* .fourth_card p {
+  padding: 10px 0; */
 
 /* ----- SEARCH CHARACTER ----- */
 
@@ -649,6 +660,7 @@ hr.solid {
   display: flex;
   align-items: center;
   justify-content: center;
+  left: 10px;
 }
 
 .searchCharacterCard .card-image img {
@@ -884,7 +896,7 @@ button.deleteBtnYes {
 }
 
 .submitButton button:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
   cursor: pointer;
 }
 
@@ -921,15 +933,6 @@ button.deleteBtnYes {
   width: 100%;
 }
 
-/* .reviews .card {
-  position: relative;
-  display: inherit;
-  align-items: center;
-  background-color: rgb(50, 50, 50);
-  height: 180px;
-  margin: 0.5em 0;
-  padding: 0px; */
-
 .reviews .card {
   position: relative;
   display: grid;
@@ -944,7 +947,7 @@ button.deleteBtnYes {
 
 .reviews article {
   display: flex;
-  position: relative;
+  /* position: relative; */
   align-items: center;
 }
 
@@ -974,7 +977,7 @@ button.deleteBtnYes {
 }
 
 .reviews .card-content .card-list {
-  inline-size: 200px;
+  width: 100%;
 }
 
 .reviews .card-image-default {
@@ -991,12 +994,12 @@ button.deleteBtnYes {
 
 .deleteReview {
   position: absolute;
-  top: 65%;
+  top: 160px;
   background: red;
   border-radius: 47%;
   width: 40px;
   height: 40px;
-  right: 2%;
+  right: 15px;
 }
 
 .deleteButton {
@@ -1017,12 +1020,12 @@ button.deleteBtnYes {
 
 .editReview {
   position: absolute;
-  top: 7%;
+  top: 50px;
   background: rgb(55, 191, 250);
   border-radius: 47%;
   width: 40px;
   height: 40px;
-  right: 2%;
+  right: 15px;
 }
 
 .editButton {
@@ -1116,41 +1119,148 @@ button.deleteBtnYes {
 
 /* ----- MEDIA QUERIES ----- */
 
+/* ##Device = Large Desktop Monitors */
+@media (min-width: 2300px) {
+
+  /* .search_games_header {
+    position: relative;
+  }
+
+  .search-wrap {
+    top: 50%;
+  } */
+
+  /* ----- HOMEPAGE ----- */
+
+  .first_card {
+    left: -100%;
+  }
+
+  .second_card {
+    left: 100%;
+  }
+
+  .third_card {
+    left: -100%;
+  }
+
+  .fourth_card {
+    left: 100%;
+  }
+
+  /* ----- MY REVIEWS ----- */
+
+ .reviews .card-content .card-list span {
+   inline-size: unset;
+   width: 100% !important;
+ }
+
+}
+
 /* ##Device = Tablets and Laptops */
 @media (min-width: 481px) and (max-width: 1280px) {
 
-  .home_page_header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 35%;
+  .back-button {
+    left: -48%;
+    top: -35px;
+  }
+
+  .search-wrap {
+    width: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .nintendo_logo {
+    height: 100%;
+    top: unset;
+  }
+
+  /* ----- LOGIN ----- */
+
+  .login_header {
     height: 30%;
+    position: absolute;
+    top: 0%;
+  }
+
+  .loginForm {
+    height: unset;
+    top: 0%;
+  }
+
+  .loginModal {
+    padding: 10px 25px 25px;
+    width: 85%;
+  }
+
+  .loginModal h3 {
+    width: unset;
+    top: unset;
+  }
+
+  .submit a {
+    width: 50%;
     position: relative;
-    top: -3%;
-}
+    display: flex;
+    left: 25%;
+    top: 15px;
+  }
+
+  .loginModal .login-btn:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+
+  .loginModal .login-btn:active {
+    transform: scale(1.01);
+    cursor: pointer;
+  }
+
+  .signUp-btn {
+    margin: 5px 0px;
+    top: unset;
+    left: unset;
+  }
+
+  .loginModal .signUp-btn:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+
+  /* ----- SIGNUP ----- */
+
+  .register_header {
+    position: absolute;
+    top: 0;
+  }
+
+  .signupForm .submit a {
+    top: -15px;
+  }
+
+  /* ----- HOMEPAGE ----- */
+
+  .home_page_header {
+    height: 35%;
+    /* new property */
+    position: relative;
+    /* top: -3%; */
+    top: 0%;
+  }
 
   .home_page_header .nintendo_logo {
-    height: 100%;
-    justify-content: center;
     top: -15%;
-}
+  }
 
   .top_row {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 428px;
-    justify-content: center;
-    align-items: center;
-    top: -20%;
-}
+    height: 450px;
+    top: -10%;
+  }
 
   .cards {
-    height: 0px;
-    display: flex;
-    position: relative;
     justify-content: center;
     width: 100%;
   }
@@ -1161,236 +1271,144 @@ button.deleteBtnYes {
   }
 
   .first_card {
-    border-radius: 10px;
-    display: inline-block;
-    filter: drop-shadow(0 5px 10px 0 #ffffff);
     width: 100%;
-    height: 150px;
-    background-color: #ffffff;
     padding: 0px;
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-    top: -15px;
+    top: 15px;
     left: 0%;
-    transition: 0.6s ease-in;
-    cursor: pointer;
-    color: black;
-}
-
-  .first_card h4 {
-    font-size: x-large;
-    position: relative;
-    margin: auto;
-    text-align: center;
-    left: 0%;
-    top: 35%;
-  }
-
-  .yoshi {
-    display: flex;
-    height: 151%;
-    justify-content: flex-end;
-    position: relative;
-    right: -2%;
-    top: 2%;
   }
 
   .first_card::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: -15px;
     right: -280px;
-    background: #000000;
-    height: 275px;
     width: 60px;
-    border-radius: 32px;
     transform: scale(5);
     transform-origin: 100% 50%;
-    transition: transform 0.25s ease-out;
+  }
+
+  .first_card h4 {
+    text-align: center;
+    left: 0%;
+    position: relative;
+    top: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .yoshi {
+    height: 151%;
+    right: -30px;
+    top: 2%;
   }
 
   .second_card {
-    border-radius: 10px;
-    display: inline-block;
-    filter: drop-shadow(0 5px 10px 0 #ffffff);
     width: 100%;
-    height: 150px;
-    background-color: #ffffff;
     padding: 0px;
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
+    top: 87px;
     left: 0%;
-    transition: 0.6s ease-in;
-    cursor: pointer;
-    color: black;
-    top: 20px;
-}
-
-  .second_card h4 {
-    font-size: x-large;
-    position: relative;
-    margin: auto;
-    text-align: center;
-    left: 0%;
-    top: 35%;
-  }
-
-  .mario {
-    display: flex;
-    height: 175%;
-    justify-content: flex-end;
-    position: relative;
-    right: -6%;
-    top: -2%;
   }
 
   .second_card::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: -15px;
     right: -280px;
-    background: #000000;
-    height: 275px;
     width: 60px;
-    border-radius: 32px;
     transform: scale(5);
     transform-origin: 100% 50%;
-    transition: transform 0.25s ease-out;
+  }
+
+  .second_card h4 {
+    text-align: center;
+    left: 0%;
+    position: relative;
+    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mario {
+    height: 175%;
+    right: -66px;
+    top: -2%;
   }
 
   .bottom_row {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 428px;
-    justify-content: center;
-    align-items: center;
-    top: -15%;
-}
-
-  .third_card {
-    border-radius: 10px;
-    display: inline-block;
-    filter: drop-shadow(0 5px 10px 0 #ffffff);
-    width: 100%;
-    height: 150px;
-    background-color: #ffffff;
-    padding: 0px;
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-    left: 0%;
-    top: -5px;
-    transition: 0.6s ease-in;
-    cursor: pointer;
-    color: black;
-}
-
-  .third_card h4 {
-    font-size: x-large;
-    position: relative;
-    margin: auto;
-    text-align: center;
-    left: 0%;
-    top: 35%;
+    height: 450px;
+    /* top: 5%; */
+    top: 35px;
   }
 
-  .fox {
-    display: flex;
-    height: 233%;
-    justify-content: flex-end;
-    position: relative;
-    right: -11%;
-    top: -10%;
+  .third_card {
+    width: 100%;
+    padding: 0px;
+    left: 0%;
+    top: 15px;
   }
 
   .third_card::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: -15px;
     right: -280px;
-    background: #000000;
-    height: 275px;
     width: 60px;
-    border-radius: 32px;
     transform: scale(5);
     transform-origin: 100% 50%;
-    transition: transform 0.25s ease-out;
+  }
+
+  .third_card h4 {
+    text-align: center;
+    left: 0%;
+    position: relative;
+    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fox {
+    height: 233%;
+    right: -125px;
+    top: -10%;
   }
 
   .fourth_card {
-    border-radius: 10px;
-    display: inline-block;
-    filter: drop-shadow(0 5px 10px 0 #ffffff);
     width: 100%;
-    height: 150px;
-    background-color: #ffffff;
     padding: 0px;
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
     left: 0%;
-    transition: 0.6s ease-in;
-    cursor: pointer;
-    color: black;
-    top: 30px;
-}
-
-  .fourth_card h4 {
-    font-size: x-large;
-    position: relative;
-    margin: auto;
-    text-align: center;
-    left: 0%;
-    top: 35%;
-  }
-
-  .rosalina {
-    display: flex;
-    height: 268%;
-    justify-content: flex-end;
-    position: relative;
-    right: -2%;
-    top: -15%;
+    top: 87px;
   }
 
   .fourth_card::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: -15px;
     right: -280px;
-    background: #000000;
-    height: 275px;
     width: 60px;
-    border-radius: 32px;
     transform: scale(5);
     transform-origin: 100% 50%;
-    transition: transform 0.25s ease-out;
   }
 
-  .logoutButton {
-    border: none;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    font-size: 36px;
-  }
-
-  .logout {
-    width: 100%;
-    display: flex;
-    height: 100%;
-    justify-content: right;
-    align-items: center;
+  .fourth_card h4 {
+    text-align: center;
+    left: 0%;
     position: relative;
+    top: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rosalina {
+    height: 268%;
+    right: -28px;
     top: -15%;
+  }
+  .logout {
+    right: unset;
+  }
+
+/* ------ WRITE REVIEW ------ */
+
+  .ModalForm {
+    /* width: 100%; */
+    width: 85%;
+  }
+
+  .Modal {
+    padding: 45px 35px;
+    width: 100%;
   }
 
 }
@@ -1412,35 +1430,61 @@ button.deleteBtnYes {
   }
 
   .nintendo_logo {
-    height: 105%;
+    height: 100%;
     top: unset;
   }
 
   /* ------ LOGIN ------ */
 
   .login_header {
-    top: -10%;
+    height: 30%;
+    position: absolute;
+    top: 0%;
   }
 
   .loginForm {
-    top: -20%;
+    top: 0%;
+    height: unset;
   }
 
   .loginModal {
     width: 85%;
+    padding: 10px 25px 25px;
   }
 
+  .loginModal h3 {
+    width: unset;
+    top: unset;
+  }
+
+  .submit a {
+    width: 50%;
+    position: relative;
+    display: flex;
+    left: 25%;
+    top: 15px;
+}
+
   .signUp-btn {
-    top: 10px;
+    margin: 5px 0px;
+    top: unset;
+    left: unset;
   }
 
   /* ----- SIGNUP ----- */
 
+  .signupForm .submit a {
+    top: -15px;
+  }
+
   /* ------ HOMEPAGE ------ */
 
   .home_page_header {
-    height: 30%;
-    top: -5%;
+    /* height: 30%; */
+    height: 35%;
+    /* top: -5%; */
+    top: 0%;
+    position: relative;
   }
 
   .top_row {
@@ -1450,7 +1494,8 @@ button.deleteBtnYes {
 
   .bottom_row {
     height: 428px;
-    top: unset;
+    /* top: unset; */
+    top: 35px;
   }
 
   .cards {
@@ -1478,7 +1523,8 @@ button.deleteBtnYes {
 
   .yoshi {
     height: 135%;
-    right: -7%;
+    /* right: -7%; */
+    right: -30px;
     top: 10%;
   }
 
@@ -1517,7 +1563,8 @@ button.deleteBtnYes {
 
   .mario {
     height: 135%;
-    right: -12%;
+    /* right: -12%; */
+    right: -55px;
     top: 10%;
   }
 
@@ -1556,7 +1603,8 @@ button.deleteBtnYes {
 
   .fox {
     height: 155%;
-    right: -20%;
+    /* right: -20%; */
+    right: -85px;
     top: 10%;
   }
 
@@ -1596,7 +1644,8 @@ button.deleteBtnYes {
   .rosalina {
     display: flex;
     height: 231%;
-    right: -6%;
+    /* right: -6%; */
+    right: -23px;
     top: -2%;
   }
 
@@ -1621,7 +1670,8 @@ button.deleteBtnYes {
   }
 
   .logout {
-    top: unset;
+    /* top: unset; */
+    top: -15%;
     right: -5px;
   }
 
@@ -1883,10 +1933,6 @@ button.deleteBtnYes {
 
   .reviews .card-content .card-name {
     font-size: large;
-  }
-
-  .reviews .card-content .card-list {
-    inline-size: 200px;
   }
 
   .reviews .card-image-default {

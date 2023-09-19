@@ -14,11 +14,11 @@ function MyReviews(props) {
   const [editButtonClicked, setEditButtonClicked] = useState(false);
   const [itemOfInterest, setItemOfInterest] = useState('');
   const [openModal, setOpenModal] = useState(false);
+  const [userId, setUserID] = useState(props.userId);
 
   useEffect(() => {
     (async () => {
       try {
-        let userId = 7;
         if (itemRemoved) {
           console.log('this is a test');
           const response = await axios.post('/delete-review', {
@@ -55,15 +55,11 @@ function MyReviews(props) {
   console.log('items: ', items);
 
   function editReview(id) {
-    // editItem(true);
     setOpenModal(true);
     setItemOfInterest(id);
   }
 
   function deleteReview(id) {
-    // let event = e.target.classList[0];
-    // event.preventDefault();
-    // console.log('id: ', id);
     removeItem(true);
     setItemOfInterest(id);
   }
@@ -71,7 +67,7 @@ function MyReviews(props) {
   return (
     <>
       {openModal ? (
-        <Modal setOpenModal={setOpenModal} itemOfInterest={itemOfInterest} setEditButtonClicked={setEditButtonClicked} />
+        <Modal setOpenModal={setOpenModal} userId={userId} itemOfInterest={itemOfInterest} setEditButtonClicked={setEditButtonClicked} />
       ) : (
         <>
           <div className="my_reviews_header">
@@ -94,8 +90,21 @@ function MyReviews(props) {
                     </div>
                     <div className="card-content">
                       <h2 className="card-name">{item.character_name}</h2>
+                      {/* {item.review.length > 200 ? (
+                        <ul className="card-list" style={{width: '70%'}}>
+                          <span>{item.review}</span>
+                        </ul>
+                      ) : (
+                        <ul className="card-list">
+                          <span>{item.review}</span>
+                        </ul>
+                      )} */}
                       <ul className="card-list">
-                        <span>{item.review}</span>
+                        {item.review.length > 200 ? (
+                          <span style={{ display: 'flex', width: '70%'}}>{item.review}</span>
+                        ) : (
+                          <span>{item.review}</span>
+                        )}
                       </ul>
                     </div>
                     <div className="editReview">
@@ -126,41 +135,3 @@ function MyReviews(props) {
 }
 
 export default MyReviews;
-
-{/* <div className="ModalForm">
-<div className="Modal">
-  <form onSubmit={handleSubmit} className="reviewForm">
-    <div className="inputField">
-      <label htmlFor="name"></label>
-      <input
-        id="name"
-        name="name"
-        autoComplete="false"
-        required
-        type="text"
-        placeholder="Mario"
-      />
-    </div>
-    <div>
-      <hr className="solid"></hr>
-    </div>
-    <div className="inputField">
-      <label htmlFor="review"></label>
-      <textarea
-        id="review"
-        name="review"
-        autoComplete="false"
-        required
-        type="text"
-        placeholder="Write Your Review"
-        maxLength="300"
-        rows="6"
-        cols="66"
-      />
-    </div>
-    <div className="submitButton">
-      <button>Submit</button>
-    </div>
-  </form>
-</div>
-</div> */}

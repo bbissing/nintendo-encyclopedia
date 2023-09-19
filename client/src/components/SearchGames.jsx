@@ -15,7 +15,6 @@ function SearchGames() {
   useEffect(() => {
     (async () => {
       try {
-        // if (isLoaded || data[q.toLowerCase()] === undefined)
         if (isLoaded) {
           if (q.length > 0) {
             if (data[q.toLowerCase()] !== undefined) {
@@ -50,8 +49,6 @@ function SearchGames() {
     }
   }
 
-  // console.log('q: ', q);
-  // console.log('item: ', items);
   if (items.length > 0) {
     items.forEach(game => {
       if (game.deck.length > 200) {
@@ -59,12 +56,9 @@ function SearchGames() {
         arr = arr.slice(0, 35);
         let lastWord = arr[arr.length - 1];
         let regex = /\p{P}/gu;
-        // console.log('does last word have punctuation?:', regex.test(lastWord));
-        // console.log('arr: ', arr);
         if (!regex.test(lastWord)) {
           arr[arr.length - 1] += '...';
         }
-        // console.log('last word: ', arr[arr.length - 1]);
         game.deck = arr.join(' ');
         console.log('game deck:', game.deck);
       }
@@ -81,7 +75,6 @@ function SearchGames() {
         </div>
         <div className="search-wrap">
           <div className="search">
-            {/* <label htmlFor="search-form"> */}
               <input
                   type="text"
                   name="search-form"
@@ -92,7 +85,6 @@ function SearchGames() {
                   onChange={(e) => setQ(e.target.value)}
                   onKeyDown={handleKeyDown}
               />
-            {/* </label> */}
             <button type="submit" className="searchButton" onClick={handleClick}>
               <IconContext.Provider value={{ className: "magnify-glass" }}>
                   <FiSearch />

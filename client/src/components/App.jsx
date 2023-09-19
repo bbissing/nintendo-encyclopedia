@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
 import Login from './Login.jsx';
 import Register from './Register.jsx';
 import HomePage from './HomePage.jsx';
@@ -20,12 +19,10 @@ function App() {
     if (userId === '') {
       axios.get('/validate')
       .then((result) => {
-        // console.log('result: ', result.data.id);
         setUserId(result.data.id);
         navigate('/home');
       })
       .catch((err) => {
-        // navigate('/login');
         console.log('Please register or login.');
       });
     }
@@ -51,7 +48,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Login authenticate={authenticate} loginFailure={loginFailure} />}/>
-      {/* <Route path="/login" element={<Login authenticate={authenticate} loginFailure={loginFailure} />}/> */}
       <Route path="/register" element={<Register authenticate={authenticate} loginFailure={loginFailure} />}/>
       <Route element={<ProtectedRoute userId={userId}/>}>
         <Route path="/home" element={<HomePage logOut={logOut}/>}/>

@@ -8,26 +8,11 @@ import axios from 'axios';
 function Register(props) {
   const [formSubmitted, submitForm] = useState(false);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       const response = await axios.get('/get-reviews');
-  //       console.log('response: ', response.data.rows);
-  //       setItems(response.data.rows);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   })();
-  // }, [formSubmitted]);
-
   function handleSubmit(e) {
 		e.preventDefault();
     let username = e.target.username.value;
     let email = e.target.email.value;
     let password = e.target.password.value;
-    // console.log('username: ', e.target.username.value);
-    // console.log('email: ', e.target.email.value);
-    // console.log('password: ', e.target.password.value);
     (async () => {
       try {
         const response = await axios.post('/create-user', {
@@ -37,7 +22,6 @@ function Register(props) {
         });
         console.log('response: ', response);
         props.authenticate(true);
-        // e.target.reset();
       } catch (error) {
         console.error(error);
         props.authenticate(false);
@@ -54,12 +38,9 @@ function Register(props) {
       </div>
       <div className="loginForm">
         <div className="loginModal" style={{height: '416px'}}>
-          {/* <Link to='/'>
-            <IoArrowBackOutline className="back-button" color={'#ffffff'} size={20} />
-          </Link> */}
           <h3>SIGN UP</h3>
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="signupForm">
               <label htmlFor="username">USERNAME</label>
               <input
                 id="username"
@@ -89,11 +70,10 @@ function Register(props) {
                 placeholder="Password"
                 maxLength="25"
               />
-              <div>
+              <div className="submit">
                 <button className='login-btn'>Submit</button>
                 <p className='existingUserConfirmation'>Already Have an Account?</p>
                 <Link to='/'>
-                  {/* <button className='signUp-btn'><span className='signUp-btn-link'>Login</span></button> */}
                   <button className='login-page-btn'><span className='login-page-btn-link'>Click Here to Login</span></button>
                 </Link>
               </div>
