@@ -21,7 +21,6 @@ function Login(props) {
         });
         console.log('response: ', response);
         props.authenticate(response);
-        // e.target.reset();
       } catch (error) {
         console.log(error);
         props.authenticate(false);
@@ -49,7 +48,6 @@ function Login(props) {
                 required
                 type="text"
                 placeholder="Email"
-                // value="bbissing@yahoo.com"
               />
               <label htmlFor="password">PASSWORD</label>
               <input
@@ -60,9 +58,8 @@ function Login(props) {
                 type="password"
                 placeholder="Password"
                 maxLength="25"
-                // value="Weezy012"
               />
-              <div>
+              <div className="submit">
                 <button className='login-btn'>Submit</button>
                 <Link to='/register'>
                   <button className='signUp-btn'><span className='signUp-btn-link'>Sign Up</span></button>

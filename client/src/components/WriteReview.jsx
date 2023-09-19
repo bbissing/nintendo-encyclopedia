@@ -6,54 +6,20 @@ import axios from 'axios';
 import defaultPic from '../assets/default_profile_pic.png';
 
 function WriteReview(props) {
-  // const [modalOpen, setModal] = useState(true);
   const [errorMessage, setError] = useState(false);
-  // const [name, setName] = useState('');
   const [charID, setCharID] = useState('');
-  // const [confirmation, setConfirmation] = useState(false);
-  // console.log('props:', props);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       let userId = 7;
-  //       if (errorMessage) {
-  //         console.log('this is a test');
-  //         const response = await axios.post('/delete-review', {
-  //           id: itemRemoved
-  //         });
-  //         const newItems = items.filter(item => item.id !== itemRemoved);
-  //         console.log('newItems: ', newItems);
-  //         setItems(newItems);
-  //         removeItems(false);
-  //       } else {
-  //         const response = await axios.get('/get-reviews', {
-  //           params: {
-  //             userId: userId
-  //           }
-  //         });
-  //         console.log('response: ', response.data.rows);
-  //         setItems(response.data.rows);
-  //       }
-  //     } catch (error) {
-  //       console.error(error.response.data.message);
-  //     }
-  //   })();
-  // }, [values]);
+  const [userId, setUserID] = useState(props.userId);
 
   function handleSubmit(e) {
 		e.preventDefault();
     let name = e.target.name.value;
     let review = e.target.review.value;
-    // setName(name);
-    // let userId = props.userId;
-    let userId = 7;
-    // let charId = Math.floor(Math.random() * 100) + 1;
+    // let userId = 7;
     let charId = '3003-' + Math.floor((Math.random() * 3000) + 30);
-    console.log('name: ', e.target.name.value);
-    console.log('review: ', e.target.review.value);
-    console.log('charI: ', charId);
-    console.log('this is a another test');
+    // console.log('name: ', e.target.name.value);
+    // console.log('review: ', e.target.review.value);
+    // console.log('charI: ', charId);
+    // console.log('this is a another test');
     (async () => {
       try {
         let image = defaultPic;
@@ -63,11 +29,9 @@ function WriteReview(props) {
               query: data[name.toLowerCase()]
             }
           })
-          // if (temp.data.)
           image = temp.data.image.thumb_url;
           charId = data[name.toLowerCase()];
           setCharID(charId);
-          // console.log('image: ', image);
         };
         const response = await axios.post('/post-review', {
           name: e.target.name.value,
@@ -83,26 +47,14 @@ function WriteReview(props) {
         setError(true);
       }
     })();
-    // setModal(false);
 	}
 
-  // function closeMessageModal() {
-  //   setTimeout(
-  //     () => setConfirmation(false),
-  //     2000
-  //   )
-  // }
-
   function deleteReview() {
-    //add logic to delete review from db
-    //then set errorMessage to false
     (async() => {
       try {
         await axios.post('/delete-review', { charID });
         alert("Your review has been deleted. Please write a new review.");
         setError(false);
-        // setConfirmation(true);
-        // closeMessageModal();
       } catch (error) {
         console.error(error);
       }
@@ -171,67 +123,3 @@ function WriteReview(props) {
 }
 
 export default WriteReview;
-
-// var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-
-// var Input = React.createClass({
-// 	render: function() {
-// 		return (
-// 			<div className="Input">
-// 				<label for={this.props.name}></label>
-// 				<input id={this.props.name} autocomplete="false" required type={this.props.type} placeholder={this.props.placeholder} maxLength={this.props.maxlength}/>
-// 			</div>
-// 		);
-// 	}
-// });
-
-// var Modal = React.createClass({
-// 	render: function() {
-// 		return (
-// 			<div className="Modal">
-// 				<form onSubmit={this.props.onSubmit} className="ModalForm">
-// 					<Input name="name" type="text" placeholder="Mario" />
-// 					<Input name="review" type="text" placeholder="Write Your Review" maxlength="300"/>
-// 					<button>Submit <i className="fa fa-fw fa-chevron-right"></i></button>
-// 				</form>
-// 			</div>
-// 		);
-// 	}
-// });
-
-// var App = React.createClass({
-
-// 	getInitialState: function() {
-// 		return { mounted: false };
-// 	},
-
-// 	componentDidMount: function() {
-// 		this.setState({ mounted: true });
-// 	},
-
-// 	handleSubmit: function(e) {
-// 		this.setState({ mounted: false });
-// 		e.preventDefault();
-// 	},
-
-// 	render: function() {
-
-// 		var child;
-// 		if(this.state.mounted) {
-// 			child = (<Modal onSubmit={this.handleSubmit} />);
-// 		}
-
-// 		return(
-// 			<div className="App">
-// 				<ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-// 					{child}
-// 				</ReactCSSTransitionGroup>
-// 			</div>
-// 		);
-// 	}
-// });
-
-// ReactDOM.render(
-// 	<App />,
-// 	document.getElementById('app')
-// );

@@ -5,7 +5,6 @@ module.exports = {
     try {
       console.log('req.body: ', req.body);
       if (req.body.charID !== undefined) {
-        // we need the unique character id, not the name
         const charID = req.body.charID;
         console.log('req: ', req);
         console.log('charID: ', charID);
@@ -16,12 +15,9 @@ module.exports = {
         );
         console.log('result: ', result);
         console.log(`Succesfully deleted value from my_reviews.`);
-        // if result.rowCount === 0, throw the result
         res.status(204).end();
       } else {
         const id = req.body.id;
-        console.log('req: ', req);
-        console.log('id: ', id);
 
         const result = await pool.query(
           "DELETE FROM my_reviews WHERE id = ($1)",
