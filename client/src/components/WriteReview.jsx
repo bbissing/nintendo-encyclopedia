@@ -14,25 +14,25 @@ function WriteReview(props) {
 		e.preventDefault();
     let name = e.target.name.value;
     let review = e.target.review.value;
-    // let userId = 7;
     let charId = '3003-' + Math.floor((Math.random() * 3000) + 30);
-    // console.log('name: ', e.target.name.value);
-    // console.log('review: ', e.target.review.value);
-    // console.log('charI: ', charId);
-    // console.log('this is a another test');
+
     (async () => {
       try {
         let image = defaultPic;
+
         if (data[name.toLowerCase()] !== undefined) {
           const temp = await axios.get('/get-character', {
             params: {
               query: data[name.toLowerCase()]
             }
           })
+
           image = temp.data.image.thumb_url;
           charId = data[name.toLowerCase()];
+
           setCharID(charId);
         };
+
         const response = await axios.post('/post-review', {
           name: e.target.name.value,
           review: e.target.review.value,
@@ -40,10 +40,9 @@ function WriteReview(props) {
           user: userId,
           char: charId
         });
-        console.log('response: ', response);
+
         e.target.reset();
       } catch (error) {
-        console.error(error.response.data.message);
         setError(true);
       }
     })();

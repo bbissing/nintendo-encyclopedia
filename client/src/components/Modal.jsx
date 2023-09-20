@@ -9,10 +9,7 @@ function Modal({ setOpenModal, userId, itemOfInterest, setEditButtonClicked }) {
     let name = e.target.name.value;
     let review = e.target.review.value;
     let id = itemOfInterest;
-    console.log('name: ', e.target.name.value);
-    console.log('review: ', e.target.review.value);
-    console.log('id: ', id);
-    console.log('this is a another test');
+
     (async () => {
       try {
         const response = await axios.put('/edit-review', {
@@ -21,12 +18,11 @@ function Modal({ setOpenModal, userId, itemOfInterest, setEditButtonClicked }) {
           user: userId,
           id: id
         });
-        console.log('editReview - response: ', response);
+
         e.target.reset();
         setEditButtonClicked(true);
         setOpenModal(false);
       } catch (error) {
-        console.error('editReview - error: ', error.response.data.message);
         setOpenModal(false);
       }
     })();

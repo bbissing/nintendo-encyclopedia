@@ -20,12 +20,11 @@ function MyReviews(props) {
     (async () => {
       try {
         if (itemRemoved) {
-          console.log('this is a test');
           const response = await axios.post('/delete-review', {
             id: itemOfInterest
           });
           const newItems = items.filter(item => item.id !== itemOfInterest);
-          console.log('newItems: ', newItems);
+
           setItems(newItems);
           removeItem(false);
           setItemOfInterest('');
@@ -35,7 +34,7 @@ function MyReviews(props) {
               userId: userId
             }
           });
-          console.log('new items after edit - response: ', response.data.rows);
+
           setEditButtonClicked(false);
         } else {
           const response = await axios.get('/get-reviews', {
@@ -43,7 +42,7 @@ function MyReviews(props) {
               userId: userId
             }
           });
-          console.log('response: ', response.data.rows);
+
           setItems(response.data.rows);
         }
       } catch (error) {
@@ -51,8 +50,6 @@ function MyReviews(props) {
       }
     })();
   }, [itemRemoved, editButtonClicked]);
-
-  console.log('items: ', items);
 
   function editReview(id) {
     setOpenModal(true);
@@ -90,15 +87,6 @@ function MyReviews(props) {
                     </div>
                     <div className="card-content">
                       <h2 className="card-name">{item.character_name}</h2>
-                      {/* {item.review.length > 200 ? (
-                        <ul className="card-list" style={{width: '70%'}}>
-                          <span>{item.review}</span>
-                        </ul>
-                      ) : (
-                        <ul className="card-list">
-                          <span>{item.review}</span>
-                        </ul>
-                      )} */}
                       <ul className="card-list">
                         {item.review.length > 200 ? (
                           <span style={{ display: 'flex', width: '70%'}}>{item.review}</span>
