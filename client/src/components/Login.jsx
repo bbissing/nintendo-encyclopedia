@@ -11,18 +11,16 @@ function Login(props) {
 		e.preventDefault();
     let email = e.target.email.value;
     let password = e.target.password.value;
-    console.log('email: ', email);
-    console.log('password: ', password);
+
     (async () => {
       try {
         const response = await axios.post('/retrieve-user', {
           email,
           password
         });
-        console.log('response: ', response);
+
         props.authenticate(response);
       } catch (error) {
-        console.log(error);
         props.authenticate(false);
       }
     })();

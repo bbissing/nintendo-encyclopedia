@@ -23,7 +23,6 @@ const execute = async (query) => {
       await client.query(query);  // sends queries
       return true;
   } catch (error) {
-      console.error(error.stack);
       return false;
   } finally {
       await client.end();         // closes connection
@@ -47,7 +46,7 @@ const text = `
 
 execute(text).then(result => {
   if (result) {
-      console.log('Table created');
+    console.log('Table created');
   }
 });
 

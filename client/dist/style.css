@@ -91,7 +91,6 @@ h1 {
   justify-content: center;
   align-items: center;
   position: absolute;
-  /* top: -15%; */
   top: 0%;
 }
 
@@ -322,7 +321,6 @@ hr.solid {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 30%; */
   height: 35%;
   position: absolute;
   top: 0%;
@@ -340,7 +338,6 @@ hr.solid {
   align-items: center;
   position: relative;
   top: -15%;
-  /* new property */
   right: 25px;
 }
 
@@ -438,9 +435,6 @@ hr.solid {
   top: 0%;
 }
 
-/* .first_card p {
-  padding: 10px 0; */
-
 .second_card {
   border-radius: 10px;
   display: inline-block;
@@ -497,9 +491,6 @@ hr.solid {
   right: -34%;
   top: 0%;
 }
-
-/* .second_card p {
-  padding: 10px 0; */
 
 .third_card {
   border-radius: 10px;
@@ -558,9 +549,6 @@ hr.solid {
   top: 0%;
 }
 
-/* .third_card p {
-  padding: 10px 0; */
-
 .fourth_card {
   border-radius: 10px;
   display: inline-block;
@@ -617,9 +605,6 @@ hr.solid {
   right: -20%;
   top: 0%;
 }
-
-/* .fourth_card p {
-  padding: 10px 0; */
 
 /* ----- SEARCH CHARACTER ----- */
 
@@ -688,7 +673,6 @@ ul.card-list {
   margin: 15px 0px 0px 0px;
   padding: 0px 0px;
   width: 90%;
-  /* inline-size: 200px; */
 }
 
 /* ----- SEARCH GAMES ----- */
@@ -1122,14 +1106,6 @@ button.deleteBtnYes {
 /* ##Device = Large Desktop Monitors */
 @media (min-width: 2300px) {
 
-  /* .search_games_header {
-    position: relative;
-  }
-
-  .search-wrap {
-    top: 50%;
-  } */
-
   /* ----- HOMEPAGE ----- */
 
   .first_card {
@@ -1245,9 +1221,7 @@ button.deleteBtnYes {
 
   .home_page_header {
     height: 35%;
-    /* new property */
     position: relative;
-    /* top: -3%; */
     top: 0%;
   }
 
@@ -1332,7 +1306,6 @@ button.deleteBtnYes {
 
   .bottom_row {
     height: 450px;
-    /* top: 5%; */
     top: 35px;
   }
 
@@ -1402,7 +1375,6 @@ button.deleteBtnYes {
 /* ------ WRITE REVIEW ------ */
 
   .ModalForm {
-    /* width: 100%; */
     width: 85%;
   }
 
@@ -1480,9 +1452,7 @@ button.deleteBtnYes {
   /* ------ HOMEPAGE ------ */
 
   .home_page_header {
-    /* height: 30%; */
     height: 35%;
-    /* top: -5%; */
     top: 0%;
     position: relative;
   }
@@ -1494,7 +1464,6 @@ button.deleteBtnYes {
 
   .bottom_row {
     height: 428px;
-    /* top: unset; */
     top: 35px;
   }
 
@@ -1523,7 +1492,6 @@ button.deleteBtnYes {
 
   .yoshi {
     height: 135%;
-    /* right: -7%; */
     right: -30px;
     top: 10%;
   }
@@ -1563,7 +1531,6 @@ button.deleteBtnYes {
 
   .mario {
     height: 135%;
-    /* right: -12%; */
     right: -55px;
     top: 10%;
   }
@@ -1603,7 +1570,6 @@ button.deleteBtnYes {
 
   .fox {
     height: 155%;
-    /* right: -20%; */
     right: -85px;
     top: 10%;
   }
@@ -1644,7 +1610,6 @@ button.deleteBtnYes {
   .rosalina {
     display: flex;
     height: 231%;
-    /* right: -6%; */
     right: -23px;
     top: -2%;
   }

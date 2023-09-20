@@ -18,12 +18,13 @@ function SearchGames() {
         if (isLoaded) {
           if (q.length > 0) {
             if (data[q.toLowerCase()] !== undefined) {
+
               const response = await axios.get('/get-games', {
                 params: {
                   query: data[q.toLowerCase()]
                 }
               });
-              console.log('response:', response);
+
               setItems(response.data);
               setIsLoaded(false);
             } else {
@@ -56,11 +57,12 @@ function SearchGames() {
         arr = arr.slice(0, 35);
         let lastWord = arr[arr.length - 1];
         let regex = /\p{P}/gu;
+
         if (!regex.test(lastWord)) {
           arr[arr.length - 1] += '...';
         }
+
         game.deck = arr.join(' ');
-        console.log('game deck:', game.deck);
       }
     })
   }

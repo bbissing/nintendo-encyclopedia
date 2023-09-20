@@ -23,7 +23,7 @@ function App() {
         navigate('/home');
       })
       .catch((err) => {
-        console.log('Please register or login.');
+        // console.log('Please register or login.');
       });
     }
   }, []);
@@ -39,11 +39,9 @@ function App() {
       navigate('/home');
     } else {
       setLoginFailure(true);
-      console.log('Incorrect email or password. Try again');
+      // console.log('Incorrect email or password. Try again');
     }
   };
-
-  console.log('userId: ', userId);
 
   return (
     <Routes>

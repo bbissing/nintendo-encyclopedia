@@ -4,7 +4,6 @@ const { getReviewHandler, retrieveUser } = require('../controllers/retrieveData.
 module.exports = {
   postReviewHandler: async (req, res) => {
     try {
-      console.log('req body: ', req.body);
       let name = req.body.name;
       let review = req.body.review;
       let image = req.body.image;
@@ -16,10 +15,8 @@ module.exports = {
         [name, review, image, user, char]
       );
 
-      console.log(`Added a character with the name ${name}`);
       res.status(201).end();
     } catch (error) {
-      console.error(error);
       res.status(400).send({
         message:'A review for this character already exists.'
       });
@@ -33,13 +30,12 @@ module.exports = {
 
     try {
       const result = await pool.query(
-        "INSERT INTO users (username, email, password) VALUES ($1, $2, crypt($3, gen_salt('bf')))",
+        "INSERT INTO users (username, email, password) VALUES ($1, $2, crypt($3, gen_salt('bf'))) RETURNING *",
         [username, email, password]
       );
-      console.log(`Added a character with the username ${username}`);
-      res.status(201).end();
+
+      res.status(201).send(result);
     } catch (error) {
-      console.error(error);
       res.status(400).send({
         message:'Username already exists/email has been taken'
       });

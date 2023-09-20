@@ -13,6 +13,7 @@ function Register(props) {
     let username = e.target.username.value;
     let email = e.target.email.value;
     let password = e.target.password.value;
+
     (async () => {
       try {
         const response = await axios.post('/create-user', {
@@ -20,10 +21,9 @@ function Register(props) {
           email,
           password
         });
-        console.log('response: ', response);
-        props.authenticate(true);
+
+        props.authenticate(response);
       } catch (error) {
-        console.error(error);
         props.authenticate(false);
       }
     })();

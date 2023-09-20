@@ -23,7 +23,7 @@ function SearchCharacter() {
                   query: data[q.toLowerCase()]
                 }
               });
-              console.log(response.data);
+
               setItem(response.data);
               setIsLoaded(false);
             } else {
