@@ -30,8 +30,8 @@ body {
 
 .back-button {
   position: relative;
-  left: -49%;
-  top: -40px;
+  left: -49.5%;
+  top: -35px;
 }
 
 .search {
@@ -76,7 +76,9 @@ body {
 .search-wrap {
   width: 40%;
   position: absolute;
-  top: 0%
+  top: 25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h1 {
@@ -91,11 +93,10 @@ h1 {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 0%;
 }
 
 .nintendo_logo img {
-  height: 100%;
+  height: 412px;
   display: flex;
 }
 
@@ -110,8 +111,8 @@ hr.solid {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30%;
-  position: absolute;
+  height: 120px;
+  position: relative;
   top: 0%;
 }
 
@@ -121,6 +122,8 @@ hr.solid {
   width: 100%;
   position: relative;
   align-items: center;
+  top: -200px;
+  flex-wrap: wrap;
 }
 
 .loginModal {
@@ -243,8 +246,8 @@ hr.solid {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30%;
-  position: absolute;
+  height: 120px;
+  position: relative;
   top: 0%;
 }
 
@@ -321,13 +324,8 @@ hr.solid {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35%;
-  position: absolute;
-  top: 0%;
-}
-
-.home_page_header .nintendo_logo {
-  top: -15%;
+  height: 120px;
+  position: relative;
 }
 
 .logout {
@@ -337,7 +335,6 @@ hr.solid {
   justify-content: right;
   align-items: center;
   position: relative;
-  top: -15%;
   right: 25px;
 }
 
@@ -357,7 +354,7 @@ hr.solid {
   height: 250px;
   align-items: center;
   justify-content: center;
-  top: 10%;
+  top: 0px;
 }
 
 .bottom_row {
@@ -368,7 +365,7 @@ hr.solid {
   height: 250px;
   justify-content: center;
   align-items: center;
-  top: 0%;
+  top: 0px;
 }
 
 .cards {
@@ -614,7 +611,7 @@ hr.solid {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 5%;
+  top: 35px;
 }
 
 .searchCharacterCard {
@@ -683,7 +680,7 @@ ul.card-list {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 5%;
+  top: 35px;
 }
 
 .search_games_card {
@@ -736,7 +733,7 @@ ul.card-list {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 5%;
+  top: 35px;
 }
 
 .ModalForm {
@@ -907,7 +904,7 @@ button.deleteBtnYes {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 5%;
+  top: 35px;
 }
 
 .reviews {
@@ -931,7 +928,6 @@ button.deleteBtnYes {
 
 .reviews article {
   display: flex;
-  /* position: relative; */
   align-items: center;
 }
 
@@ -1106,7 +1102,21 @@ button.deleteBtnYes {
 /* ##Device = Large Desktop Monitors */
 @media (min-width: 2300px) {
 
+  .search-wrap {
+    top: 45px;
+  }
+
+  /* ----- LOGIN ----- */
+
+  .loginModal {
+    width: 915px;
+  }
+
   /* ----- HOMEPAGE ----- */
+
+  .top_row {
+    top: -85px;
+  }
 
   .first_card {
     left: -100%;
@@ -1114,6 +1124,10 @@ button.deleteBtnYes {
 
   .second_card {
     left: 100%;
+  }
+
+  .bottom_row {
+    top: -36px;
   }
 
   .third_card {
@@ -1144,37 +1158,32 @@ button.deleteBtnYes {
   .search-wrap {
     width: 85%;
     position: absolute;
-    top: 50%;
+    top: 25px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  .nintendo_logo {
-    height: 100%;
-    top: unset;
+  .nintendo_logo img {
+    height: 300px;
+    display: flex;
   }
 
   /* ----- LOGIN ----- */
 
   .login_header {
-    height: 30%;
-    position: absolute;
-    top: 0%;
+    height: 120px;
   }
 
-  .loginForm {
-    height: unset;
-    top: 0%;
+  .login_header .nintendo_logo {
+    top: -25%;
   }
 
   .loginModal {
-    padding: 10px 25px 25px;
     width: 85%;
   }
 
-  .loginModal h3 {
-    width: unset;
-    top: unset;
+  .loginForm {
+    top: -13%;
   }
 
   .submit a {
@@ -1195,43 +1204,24 @@ button.deleteBtnYes {
     cursor: pointer;
   }
 
-  .signUp-btn {
-    margin: 5px 0px;
-    top: unset;
-    left: unset;
-  }
-
   .loginModal .signUp-btn:hover {
     transform: scale(1.02);
     cursor: pointer;
   }
 
-  /* ----- SIGNUP ----- */
-
-  .register_header {
-    position: absolute;
-    top: 0;
-  }
-
-  .signupForm .submit a {
-    top: -15px;
-  }
-
   /* ----- HOMEPAGE ----- */
 
   .home_page_header {
-    height: 35%;
-    position: relative;
-    top: 0%;
+    height: 180px;
   }
 
-  .home_page_header .nintendo_logo {
-    top: -15%;
+  .logout {
+    right: unset;
   }
 
   .top_row {
     height: 450px;
-    top: -10%;
+    top: 25px;
   }
 
   .cards {
@@ -1306,7 +1296,8 @@ button.deleteBtnYes {
 
   .bottom_row {
     height: 450px;
-    top: 35px;
+    top: 150px;
+    padding-bottom: 20px;
   }
 
   .third_card {
@@ -1335,7 +1326,7 @@ button.deleteBtnYes {
 
   .fox {
     height: 233%;
-    right: -125px;
+    right: -126px;
     top: -10%;
   }
 
@@ -1365,11 +1356,8 @@ button.deleteBtnYes {
 
   .rosalina {
     height: 268%;
-    right: -28px;
+    right: -26px;
     top: -15%;
-  }
-  .logout {
-    right: unset;
   }
 
 /* ------ WRITE REVIEW ------ */
@@ -1383,50 +1371,66 @@ button.deleteBtnYes {
     width: 100%;
   }
 
+  /* ------ SEARCH CHARACTER ------ */
+
+  .search_character_header {
+    top: 35px;
+  }
+
+  .search_character_card {
+    top: 35px;
+  }
+
+  /* ------ SEARCH CHARACTER ------ */
+
+  .search_games_header {
+    top: 35px;
+  }
+
+  .search_games_card {
+    top: 105px;
+  }
+
 }
 
 /* ##Device = Mobile */
 @media (max-width: 480px) {
 
   .back-button {
-    left: -48%;
+    left: -46%;
     top: -35px;
   }
 
   .search-wrap {
     width: 85%;
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
+    top: 25px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
   .nintendo_logo {
-    height: 100%;
     top: unset;
+  }
+
+  .nintendo_logo img {
+    height: 265px;
+    display: flex;
   }
 
   /* ------ LOGIN ------ */
 
-  .login_header {
-    height: 30%;
-    position: absolute;
-    top: 0%;
+  .loginModal {
+    width: 85%;
   }
 
   .loginForm {
-    top: 0%;
-    height: unset;
+    top: -100px;
   }
 
-  .loginModal {
-    width: 85%;
-    padding: 10px 25px 25px;
-  }
-
-  .loginModal h3 {
-    width: unset;
-    top: unset;
+  #root .register_header ~ .loginForm {
+    top: -50px;
   }
 
   .submit a {
@@ -1435,36 +1439,28 @@ button.deleteBtnYes {
     display: flex;
     left: 25%;
     top: 15px;
-}
-
-  .signUp-btn {
-    margin: 5px 0px;
-    top: unset;
-    left: unset;
-  }
-
-  /* ----- SIGNUP ----- */
-
-  .signupForm .submit a {
-    top: -15px;
   }
 
   /* ------ HOMEPAGE ------ */
 
   .home_page_header {
-    height: 35%;
-    top: 0%;
+    height: 180px;
     position: relative;
   }
 
+  .logout {
+    top: unset;
+    right: unset;
+  }
+
   .top_row {
-    height: 428px;
-    top: -10%;
+    height: 450px;
+    top: unset;
   }
 
   .bottom_row {
-    height: 428px;
-    top: 35px;
+    height: 450px;
+    top: 150px;
   }
 
   .cards {
@@ -1480,7 +1476,7 @@ button.deleteBtnYes {
   .first_card {
     width: 100%;
     padding: 0px;
-    top: -105px;
+    top: -110px;
     left: 0%;
   }
 
@@ -1519,7 +1515,7 @@ button.deleteBtnYes {
   .second_card {
     width: 100%;
     padding: 0px;
-    top: -45px;
+    top: -37px;
     left: 0%;
   }
 
@@ -1559,7 +1555,7 @@ button.deleteBtnYes {
     width: 100%;
     padding: 0px;
     left: 0%;
-    top: -105px;
+    top: -110px;
   }
 
   .third_card h4 {
@@ -1597,7 +1593,7 @@ button.deleteBtnYes {
   .fourth_card {
     width: 100%;
     padding: 0px;
-    top: -45px;
+    top: -37px;
     left: 0%;
   }
 
@@ -1634,12 +1630,6 @@ button.deleteBtnYes {
     padding: 10px 0;
   }
 
-  .logout {
-    /* top: unset; */
-    top: -15%;
-    right: -5px;
-  }
-
   /* ------ SEARCH CHARACTER ------ */
 
   .search_character_header {
@@ -1648,7 +1638,8 @@ button.deleteBtnYes {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 5%;
+    /* top: 5%; */
+    top: 35px;
   }
 
   .searchCharacterCard {
