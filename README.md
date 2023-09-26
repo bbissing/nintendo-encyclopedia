@@ -1,1 +1,1 @@
-# nintendo-encyclopedia
+# https://nintendo-encyclopedia.com/
