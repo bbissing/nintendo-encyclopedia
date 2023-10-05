@@ -1,1 +1,2 @@
-# https://nintendo-encyclopedia.com/
+# Nintendo Encyclopedia
+# [Website](https://nintendo-encyclopedia.com/)
