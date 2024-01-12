@@ -1,5 +1,4 @@
 # Nintendo Encyclopedia
-## [Website](https://nintendo-encyclopedia.com/)
 
 Nintendo Encyclopedia is an app that serves as an encyclopedia for Nintendo enthusiasts.
 Under the "Search Character" section, the user can search their favorite Nintendo character to learn more about them.
